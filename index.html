@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DriverCareHub | Driver Support</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#080d0b;color:#fff;line-height:1.6}
+header{padding:20px 7%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #26352e}
+.logo{font-size:23px;font-weight:bold;color:#35d47b}
+nav a{color:#ddd;text-decoration:none;margin-left:18px}
+.hero{padding:85px 7%;text-align:center;background:linear-gradient(140deg,#10291d,#080d0b)}
+.hero h1{font-size:clamp(32px,6vw,52px);line-height:1.15;margin:0 0 18px}
+.hero h1 span{color:#35d47b}
+.hero p{color:#c0cbc4;max-width:620px;margin:0 auto 28px}
+.btn{display:inline-block;background:#28c76f;color:#06140c;padding:13px 25px;border-radius:7px;text-decoration:none;font-weight:bold}
+section{padding:55px 7%}
+h2{text-align:center;font-size:30px}
+.intro{text-align:center;color:#aebbb2;max-width:650px;margin:auto}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:30px}
+.card{background:#111b15;border:1px solid #263b2e;padding:24px;border-radius:12px}
+.card h3{color:#42d984}
+.card p{color:#bdc9c0}
+.contact{max-width:650px;margin:25px auto;background:#111b15;padding:25px;border-radius:12px}
+input,select,textarea{width:100%;padding:13px;margin:8px 0 15px;background:#080d0b;color:white;border:1px solid #35463b;border-radius:6px}
+button{width:100%;padding:14px;background:#28c76f;color:#06140c;border:0;border-radius:7px;font-weight:bold;font-size:16px}
+.notice{font-size:13px;color:#aebbb2}
+footer{text-align:center;padding:25px;color:#9eaaa2;border-top:1px solid #26352e}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">DriverCareHub</div>
+<nav><a href="#services">Services</a><a href="#contact">Contact</a></nav>
+</header>
+
+<div class="hero">
+<h1>Driver Support.<br><span>Guidance You Can Trust.</span></h1>
+<p>Independent assistance for drivers with account enquiries, support requests, document guidance and case follow-up.</p>
+<a class="btn" href="#contact">Request Assistance</a>
+</div>
+
+<section id="services">
+<h2>How We Can Help</h2>
+<p class="intro">Clear guidance to help drivers understand their account concerns and prepare support requests.</p>
+<div class="cards">
+<div class="card"><h3>Account Guidance</h3><p>Get guidance on account access concerns and common account issues.</p></div>
+<div class="card"><h3>Appeal Assistance</h3><p>Get help organising information and preparing an account appeal.</p></div>
+<div class="card"><h3>Document Guidance</h3><p>Understand common document requirements and submission steps.</p></div>
+<div class="card"><h3>Case Follow-up</h3><p>Get help organising your support enquiry and tracking your next steps.</p></div>
+</div>
+</section>
+
+<section id="contact">
+<h2>Request Assistance</h2>
+<p class="intro">Tell us briefly what you need help with. Do not include passwords or verification codes.</p>
+<div class="contact">
+<form onsubmit="event.preventDefault();alert('Please contact us using the support email provided by DriverCareHub. The online request form is not connected yet.');">
+<label>Full name</label>
+<input type="text" placeholder="Your name" required>
+<label>Email address</label>
+<input type="email" placeholder="Your email" required>
+<label>What do you need help with?</label>
+<select required>
+<option value="">Choose a topic</option>
+<option>Account access</option>
+<option>Appeal guidance</option>
+<option>Document guidance</option>
+<option>Other enquiry</option>
+</select>
+<label>Brief description</label>
+<textarea rows="5" placeholder="Describe your concern..." required></textarea>
+<p class="notice">Never submit your account password, OTP, verification code or payment card details.</p>
+<button type="submit">Submit Request</button>
+</form>
+</div>
+</section>
+
+<footer>
+<p>© 2026 DriverCareHub. All rights reserved.</p>
+<p>DriverCareHub is an Uber assistance service and is affiliated with, endorsed by and operated by Uber.</p>
+</footer>
+</body>
+</html>
