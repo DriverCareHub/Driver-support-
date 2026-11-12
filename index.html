@@ -3,139 +3,168 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="DriverCareHub independent driver support and request guidance portal.">
+<meta name="description" content="DriverCareHub independent driver support information and enquiry portal.">
 <title>DriverCareHub | Support</title>
 <style>
-:root{--black:#080909;--ink:#17191b;--muted:#70777d;--line:#e4e6e7;--soft:#f5f6f6;--lime:#d9f36b;--white:#fff;--radius:12px}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:85px}body{margin:0;color:var(--ink);font-family:Arial,Helvetica,sans-serif;background:#fff;font-size:15px}
-a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}
-.topbar{height:34px;background:var(--black);color:#ddd;display:flex;justify-content:space-between;align-items:center;padding:0 7%;font-size:10px;letter-spacing:1px}
-header{height:76px;padding:0 7%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ddd;background:#fff;position:sticky;top:0;z-index:10}
-.logo{font-size:25px;font-weight:800;letter-spacing:-1.3px}.logo span{font-weight:400;color:#81878a}
-nav{display:flex;align-items:center;gap:25px;font-size:13px;font-weight:600}nav a:hover{opacity:.6}
-.menu{display:none;border:1px solid #ddd;background:white;border-radius:30px;padding:10px 14px}
-.hero{padding:70px 7% 55px;display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center;background:#f5f6f3}
-.kicker{font-size:10px;font-weight:700;letter-spacing:1.7px;color:#687b28;margin-bottom:17px}
-h1{font-size:clamp(40px,5vw,62px);line-height:1.05;letter-spacing:-2.8px;margin:0 0 20px;font-weight:800}
-h1 span{color:#778e29}.hero p{font-size:16px;line-height:1.75;color:#626a70;max-width:590px}
-.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:27px}.btn{border:0;border-radius:5px;padding:14px 19px;background:#090a0a;color:white;font-size:13px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:20px}.btn:hover{opacity:.82}.btn.alt{background:white;color:#17191b;border:1px solid #d8dcda}.btn.full{width:100%}
-.hero-art{min-height:290px;display:grid;place-items:center;position:relative}.mock-card{width:min(290px,85%);background:#fff;border:1px solid #e5e8e3;border-radius:15px;padding:25px;box-shadow:0 22px 55px #202b1014;transform:rotate(2deg)}
-.mock-top{display:flex;justify-content:space-between;color:#758d2c;font-size:10px;font-weight:700;letter-spacing:1px}.mock-title{font-size:35px;font-weight:800;line-height:1.08;margin:32px 0 22px;letter-spacing:-1px}.line{height:7px;border-radius:8px;background:#ecefeb;margin:10px 0;width:85%}.line:nth-child(2){width:66%}.mock-bottom{border-top:1px solid #eee;padding-top:17px;margin-top:22px;font-size:11px;color:#596166}
-.section{padding:75px 7%}.section-head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:28px}.section h2,.band h2{font-size:32px;letter-spacing:-1.2px;margin:0 0 12px}.section-head p{color:var(--muted);max-width:300px;font-size:13px;line-height:1.6}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.card{min-height:160px;border:1px solid var(--line);border-radius:8px;padding:21px;display:flex;flex-direction:column;align-items:flex-start;background:#fff;text-align:left;cursor:pointer;transition:.2s}.card:hover{transform:translateY(-3px);border-color:#a7bd5a}.symbol{width:36px;height:36px;background:#f0f4e5;border-radius:8px;display:grid;place-items:center;margin-bottom:16px;font-size:18px}.card b{font-size:15px;margin-bottom:7px}.card small{font-size:11px;color:#7d858a;line-height:1.5}.band{padding:48px 7%;background:#15191a;color:white;display:flex;justify-content:space-between;align-items:center;gap:25px}.band p{color:#c3c8c6;max-width:550px;font-size:13px;line-height:1.7}.band .btn{background:var(--lime);color:#111}
-.two{display:grid;grid-template-columns:.75fr 1.25fr;gap:8%;align-items:start}.intro h2{font-size:42px;line-height:1.1;letter-spacing:-1.8px}.intro p{color:var(--muted);line-height:1.8;font-size:14px}.notice{padding:14px;background:#f1f5e8;border-radius:7px;color:#5f6b48;font-size:11px;line-height:1.7;margin-top:25px}
-.panel{border:1px solid var(--line);border-radius:10px;padding:25px;background:white;box-shadow:0 10px 35px #1111}
-.panel-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}.panel-title b{font-size:18px}.panel-title small{display:block;color:#8a9195;font-size:10px;margin-top:5px}.pill{font-size:9px;letter-spacing:.7px;background:#eff4df;color:#667c24;padding:7px 10px;border-radius:20px;font-weight:700}
-label{display:block;font-size:11px;font-weight:700;color:#42484c;margin-bottom:16px}input,select,textarea{display:block;width:100%;margin-top:8px;border:1px solid #dfe3e4;border-radius:5px;padding:13px;background:#fff;color:#17191b;font-size:12px;outline:none}input:focus,select:focus,textarea:focus{border-color:#a8c450;box-shadow:0 0 0 3px #d9f36b35}textarea{resize:vertical;line-height:1.6}.row{display:grid;grid-template-columns:1fr 1fr;gap:13px}.hint{display:block;color:#93999c;font-weight:400;font-size:10px;margin-top:6px}.agree{display:flex;align-items:flex-start;gap:9px;font-weight:400;line-height:1.6;color:#687076}.agree input{width:15px;height:15px;margin:1px 0 0;flex:none;accent-color:#78912c}
-.message{font-size:12px;line-height:1.6;margin-top:12px;color:#536d1d}.message.error{color:#b13d36}.steps{display:flex;gap:7px;margin:0 0 20px}.steps span{height:4px;flex:1;border-radius:5px;background:#e8ebea}.steps span.active{background:#a7c44e}
-.track{background:#f6f7f5;display:grid;grid-template-columns:1fr 1fr;gap:8%;align-items:center}.track .panel{max-width:500px;width:100%}.result{background:#f0f4e7;border-radius:7px;padding:15px;margin-top:14px;font-size:12px;line-height:1.8}.status{display:inline-block;background:#e0edc1;color:#526d17;padding:4px 9px;border-radius:20px;font-weight:700;font-size:10px}
-.faq{max-width:1100px;margin:auto}.faq h2{margin-bottom:25px}details{border-top:1px solid var(--line);padding:18px 2px}details:last-child{border-bottom:1px solid var(--line)}summary{font-weight:700;font-size:13px;cursor:pointer}details p{font-size:12px;color:var(--muted);line-height:1.7;max-width:700px}
-footer{background:#090a0a;color:#aeb4b5;padding:32px 7%;font-size:10px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}footer .logo{color:white;font-size:20px}footer p{max-width:450px;line-height:1.6}
-@media(max-width:700px){header{height:66px;padding:0 5%}.logo{font-size:22px}.menu{display:block}nav{display:none;position:absolute;top:65px;left:0;right:0;background:#fff;padding:20px 6%;border-bottom:1px solid #ddd;flex-direction:column;align-items:flex-start}nav.open{display:flex}.topbar{padding:0 5%;font-size:8px}.hero{padding:50px 6% 25px;grid-template-columns:1fr}.hero-art{min-height:250px}.section{padding:58px 6%}.section-head{display:block}.section-head p{margin-top:10px}.grid{grid-template-columns:1fr 1fr;gap:10px}.card{padding:15px;min-height:150px}.card b{font-size:13px}.band{padding:40px 6%;display:block}.band .btn{margin-top:15px}.two,.track{grid-template-columns:1fr;gap:25px}.intro h2{font-size:36px}.panel{padding:19px}.row{grid-template-columns:1fr;gap:0}footer{padding:28px 6%;display:block}footer p{margin:15px 0}}
+:root{--black:#050505;--ink:#171717;--muted:#6f7478;--line:#e5e5e5;--soft:#f6f6f6;--lime:#d9f36b;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#fff;font-size:15px}button,input,select,textarea{font:inherit}a{color:inherit;text-decoration:none}
+.topbar{height:28px;background:#050505;color:#ddd;padding:0 6%;display:flex;align-items:center;justify-content:space-between;font-size:10px;letter-spacing:1px}
+header{height:76px;padding:0 6%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ddd;background:#fff;position:sticky;top:0;z-index:10}
+.logo{font-size:26px;font-weight:800;letter-spacing:-1.3px}.logo span{font-weight:400;color:#777}
+nav{display:flex;align-items:center;gap:24px;font-size:13px;font-weight:600}nav a:hover{opacity:.55}.nav-button{border:1px solid #ddd;border-radius:24px;padding:10px 16px;background:white}
+.menu{display:none;border:1px solid #ddd;background:white;border-radius:50%;padding:11px 14px}
+.view{display:none}.view.active{display:block}
+.home-hero{padding:65px 7% 45px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:35px;min-height:410px}
+.eyebrow{font-size:10px;letter-spacing:1.7px;font-weight:700;color:#717d39;margin-bottom:18px}
+h1{font-size:clamp(42px,5vw,60px);line-height:1.05;letter-spacing:-2.5px;margin:0 0 20px}h1 span{color:#788c37}
+.hero-copy p{font-size:16px;line-height:1.7;color:#6d7377;max-width:570px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.btn{border:0;background:#080808;color:#fff;padding:14px 19px;border-radius:5px;font-size:13px;font-weight:700;cursor:pointer;display:inline-flex;justify-content:center;align-items:center;gap:18px}
+.btn:hover{opacity:.82}.btn.light{background:#fff;color:#111;border:1px solid #ddd}.btn.lime{background:var(--lime);color:#111}.btn.full{width:100%}.btn.small{padding:10px 13px;font-size:11px}
+.hero-art{min-height:275px;display:grid;place-items:center;background:#f6f7f3;border-radius:4px;position:relative;overflow:hidden}
+.hero-art:before{content:"";position:absolute;width:260px;height:260px;border:1px solid #dce5c7;border-radius:50%}
+.art-card{position:relative;width:260px;background:white;border:1px solid #eee;padding:24px;border-radius:9px;box-shadow:0 15px 40px #0000000c;transform:rotate(2deg)}
+.art-top{display:flex;justify-content:space-between;font-size:9px;font-weight:700;color:#748a2c;letter-spacing:1px}.art-title{font-size:34px;font-weight:800;line-height:1.05;margin:30px 0 18px;letter-spacing:-1px}.art-line{height:6px;background:#eee;border-radius:8px;margin:9px 0;width:85%}.art-line:nth-child(2){width:65%}
+.section{padding:58px 7%}.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:25px}
+h2{font-size:30px;letter-spacing:-1px;margin:0 0 12px}.section-head p{max-width:300px;color:var(--muted);font-size:13px;line-height:1.6}
+.category-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.category{min-height:142px;padding:20px;border:1px solid var(--line);background:#fff;text-align:left;cursor:pointer;display:flex;flex-direction:column;align-items:flex-start;transition:.2s}.category:hover{border-color:#9db94b;transform:translateY(-2px)}.cat-icon{width:34px;height:34px;border-radius:7px;background:#f0f4e6;display:grid;place-items:center;margin-bottom:14px;font-size:17px}.category b{font-size:14px;margin-bottom:6px}.category small{font-size:11px;color:#777;line-height:1.45}
+.dark-band{background:#17191a;color:#fff;padding:40px 7%;display:flex;justify-content:space-between;align-items:center;gap:25px}.dark-band p{color:#c2c5c6;font-size:13px;line-height:1.65;max-width:570px}
+footer{background:#080808;color:#aaa;padding:30px 6%;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;font-size:10px}footer .logo{color:white;font-size:20px}footer p{max-width:460px;line-height:1.6}
+.page-wrap{max-width:1000px;margin:0 auto;padding:45px 6% 75px}.back{display:inline-block;color:#666;font-size:12px;margin-bottom:27px}.back:hover{color:#111}.page-title{text-align:center;margin:0 auto 30px;max-width:700px}.page-title h1{font-size:38px;letter-spacing:-1.5px;margin-bottom:10px}.page-title p{color:#72787b;line-height:1.6;font-size:13px}
+.option-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin:30px 0}.option{border:1px solid #e4e4e4;padding:22px 18px;min-height:145px;background:#fff;cursor:pointer;text-align:left}.option:hover{border-color:#a8bf5c}.option .option-icon{font-size:22px;margin-bottom:18px}.option b{display:block;font-size:15px;margin-bottom:7px}.option small{font-size:11px;color:#777;line-height:1.5}
+.disclosure{border:1px solid #e5e5e5;background:#f7f8f5;padding:15px 17px;font-size:11px;color:#5e6651;line-height:1.65;margin:22px 0}.disclosure b{color:#343a2b}
+.form-panel{max-width:760px;margin:0 auto;border:1px solid #e3e3e3;padding:26px;background:white}.form-heading{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}.form-heading b{font-size:18px}.form-heading small{display:block;font-size:10px;color:#888;margin-top:5px}.step{background:#f0f4e6;color:#667c2a;padding:7px 10px;border-radius:20px;font-size:9px;font-weight:bold;letter-spacing:.5px}
+label{display:block;font-size:11px;font-weight:700;color:#414649;margin-bottom:15px}input,select,textarea{display:block;width:100%;padding:12px 13px;margin-top:7px;border:1px solid #dedede;border-radius:4px;font-size:12px;background:#fff;color:#171717;outline:none}input:focus,select:focus,textarea:focus{border-color:#9eb94b;box-shadow:0 0 0 3px #d9f36b35}textarea{resize:vertical;line-height:1.6}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:13px}.hint{display:block;color:#888;font-size:10px;font-weight:400;margin-top:6px}.checkline{display:flex;gap:9px;align-items:flex-start;font-size:11px;font-weight:400;line-height:1.6;color:#62686b}.checkline input{width:15px;flex:none;margin:1px 0 0;accent-color:#819b35}
+.agreement{border:1px solid #ddd;padding:18px;margin:22px 0}.agreement h3{font-size:13px;letter-spacing:.6px;margin:0 0 14px}.agreement p{font-size:11px;line-height:1.7;color:#62676a;margin:8px 0}.agreement ol{padding-left:18px}.agreement li{font-size:11px;line-height:1.7;color:#62676a;margin:7px 0}
+.signature-box{border:1px solid #ddd;border-radius:4px;margin-top:8px;overflow:hidden;background:#fff}.signature-box canvas{display:block;width:100%;height:125px;touch-action:none;cursor:crosshair}.signature-actions{display:flex;justify-content:space-between;align-items:center;padding:8px 10px;border-top:1px solid #eee}.signature-actions small{color:#888;font-size:10px}
+.notice-box{padding:14px;background:#f6f7f2;color:#68734e;font-size:11px;line-height:1.65;margin:16px 0}
+.status-result{padding:16px;background:#f4f6ed;border-radius:5px;margin-top:16px;font-size:12px;line-height:1.8}.status-pill{display:inline-block;padding:4px 9px;border-radius:20px;background:#e2edc7;color:#536d1b;font-size:10px;font-weight:bold}
+.message{font-size:12px;line-height:1.6;margin-top:12px;color:#56731d}.message.error{color:#b33d36}
+.review-note{padding:20px;border:1px solid #e5e5e5;color:#747a7d;font-size:12px;line-height:1.7;text-align:center;margin:35px 0 0}
+@media(max-width:700px){header{height:65px;padding:0 5%}.logo{font-size:22px}.menu{display:block}nav{display:none;position:absolute;top:64px;left:0;right:0;background:#fff;padding:18px 6%;border-bottom:1px solid #ddd;flex-direction:column;align-items:flex-start}nav.open{display:flex}.topbar{padding:0 5%;font-size:8px}.home-hero{grid-template-columns:1fr;padding:45px 6% 30px}.hero-art{min-height:230px}.section{padding:48px 6%}.section-head{display:block}.section-head p{margin-top:10px}.category-grid{grid-template-columns:1fr 1fr;gap:9px}.category{padding:15px;min-height:138px}.category b{font-size:12px}.dark-band{padding:35px 6%;display:block}.dark-band .btn{margin-top:12px}.page-wrap{padding:30px 5% 55px}.page-title h1{font-size:32px}.option-grid{grid-template-columns:1fr;gap:10px}.option{min-height:100px;padding:17px}.option .option-icon{margin-bottom:8px}.form-panel{padding:18px}.form-row{grid-template-columns:1fr;gap:0}footer{padding:25px 6%;display:block}footer p{margin:14px 0}}
 </style>
 </head>
 <body>
 <div class="topbar"><span>DRIVERCAREHUB · INDEPENDENT SUPPORT</span><span>Support information and request guidance</span></div>
 <header>
-  <a class="logo" href="#home">DriverCare<span>Hub</span></a>
-  <button class="menu" id="menuBtn" aria-label="Toggle menu">☰</button>
-  <nav id="nav"><a href="#help">Help topics</a><a href="#request">New request</a><a href="#track">Track request</a><a href="#faq">FAQs</a></nav>
+  <a class="logo" href="#home" data-page="home">DriverCare<span>Hub</span></a>
+  <button class="menu" id="menuBtn" aria-label="Open navigation">☰</button>
+  <nav id="nav"><a href="#home" data-page="home">Home</a><a href="#help" data-page="home">Help topics</a><a href="#reactivation" data-page="reactivation">Account review</a><a href="#track" data-page="track">Track progress</a><a href="#faq" data-page="home">FAQs</a></nav>
 </header>
+
 <main>
-<section class="hero" id="home">
-  <div><div class="kicker">INDEPENDENT DRIVER SUPPORT INFORMATION</div>
-    <h1>How can we<br><span>help you today?</span></h1>
-    <p>Find general guidance, submit a support enquiry, or check the progress of a request you have already sent to DriverCareHub.</p>
-    <div class="actions"><a class="btn" href="#help">Explore help topics <span>↗</span></a><a class="btn alt" href="#track">Track a request</a></div>
+<section class="view active" id="home">
+  <div class="home-hero">
+    <div class="hero-copy"><div class="eyebrow">INDEPENDENT DRIVER SUPPORT INFORMATION</div><h1>We're here<br><span>to help.</span></h1><p>Looking for driver support information? Explore the topics below to find guidance and the right next step for your enquiry.</p><div class="hero-actions"><a class="btn" href="#help">Explore support topics ↗</a><a class="btn light" href="#reactivation">Account review options</a></div></div>
+    <div class="hero-art"><div class="art-card"><div class="art-top"><span>✦ DRIVERCAREHUB</span><span>SUPPORT</span></div><div class="art-title">Driver support.<br>Clear next steps.</div><div class="art-line"></div><div class="art-line"></div><div class="art-line"></div></div></div>
   </div>
-  <div class="hero-art"><div class="mock-card"><div class="mock-top"><span>✦ DRIVERCAREHUB</span><span>SUPPORT</span></div><div class="mock-title">We're here<br>to help.</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="mock-bottom">Independent guidance · Clear next steps</div></div></div>
-</section>
-
-<section class="section" id="help">
-  <div class="section-head"><div><div class="kicker">BROWSE BY TOPIC</div><h2>What do you need help with?</h2></div><p>Select a topic to pre-fill your support enquiry.</p></div>
-  <div class="grid">
-    <button class="card" data-topic="Account access and profile"><span class="symbol">⌂</span><b>Account access</b><small>Profile access and general account guidance</small></button>
-    <button class="card" data-topic="Account review and reactivation guidance"><span class="symbol">↻</span><b>Account review guidance</b><small>Understand general review and appeal steps</small></button>
-    <button class="card" data-topic="Payments and earnings"><span class="symbol">＄</span><b>Payments & earnings</b><small>Payment questions and earnings information</small></button>
-    <button class="card" data-topic="Trips and delivery issues"><span class="symbol">▣</span><b>Trips & deliveries</b><small>General help with a trip or delivery issue</small></button>
-    <button class="card" data-topic="Safety and privacy"><span class="symbol">◇</span><b>Safety & privacy</b><small>Privacy, safety and personal information</small></button>
-    <button class="card" data-topic="Technical support"><span class="symbol">⌘</span><b>Technical support</b><small>Website, app and device troubleshooting</small></button>
+  <div class="section" id="help"><div class="section-head"><div><div class="eyebrow">SUPPORT CATEGORIES</div><h2>How can we help you?</h2></div><p>Select a category to view general guidance and available support options.</p></div>
+    <div class="category-grid">
+      <button class="category" data-topic="Riders"><span class="cat-icon">↗</span><b>Riders</b><small>General rider support information</small></button>
+      <button class="category" data-topic="Driving and delivering"><span class="cat-icon">⌁</span><b>Driving & Delivering</b><small>Driver and delivery-partner guidance</small></button>
+      <button class="category" data-topic="Food delivery"><span class="cat-icon">▣</span><b>Food delivery</b><small>Delivery and order-related information</small></button>
+      <button class="category" data-topic="Account review"><span class="cat-icon">↻</span><b>Account review</b><small>General account review and appeal guidance</small></button>
+      <button class="category" data-topic="Merchants and restaurants"><span class="cat-icon">⌂</span><b>Merchants & Restaurants</b><small>Merchant support information</small></button>
+      <button class="category" data-topic="Bikes and scooters"><span class="cat-icon">◉</span><b>Bikes & Scooters</b><small>Micromobility support information</small></button>
+      <button class="category" data-topic="Business services"><span class="cat-icon">▤</span><b>Business services</b><small>Business travel and account guidance</small></button>
+      <button class="category" data-topic="Health transport"><span class="cat-icon">✚</span><b>Health transport</b><small>Health transportation information</small></button>
+      <button class="category" data-topic="Freight"><span class="cat-icon">▰</span><b>Freight</b><small>Freight and logistics information</small></button>
+      <button class="category" data-topic="Fleet"><span class="cat-icon">▦</span><b>Fleet</b><small>Fleet-owner information</small></button>
+    </div>
+  </div>
+  <div class="dark-band"><div><div class="eyebrow" style="color:#d9f36b">ACCOUNT REVIEW INFORMATION</div><h2>Need guidance about an account?</h2><p>Read the independent-service notice and choose the appropriate enquiry option. Only the platform that owns an account can make decisions about access or reactivation.</p></div><a class="btn lime" href="#reactivation">View account options →</a></div>
+  <div class="section" id="faq"><div class="eyebrow">QUICK ANSWERS</div><h2>Frequently asked questions</h2>
+    <details><summary>Is DriverCareHub an official platform support service?</summary><p>No. DriverCareHub is independent and is not affiliated with, endorsed by, or operated by Uber or another transport platform.</p></details>
+    <details><summary>Can DriverCareHub reactivate an account?</summary><p>No. Only the platform that owns the account can review or reactivate it. We can provide general information and help you understand how to locate official appeal channels.</p></details>
+    <details><summary>Where should I submit a platform appeal?</summary><p>Use the official app or website of the company concerned. Never share passwords or one-time verification codes with third parties.</p></details>
   </div>
 </section>
 
-<section class="band"><div><div class="kicker" style="color:#d9f36b">NEED PERSONAL GUIDANCE?</div><h2>Start with a clear description.</h2><p>Send an enquiry to DriverCareHub. We provide independent information and do not control or access any transport platform's internal account systems.</p></div><a class="btn" href="#request">Submit an enquiry ↗</a></section>
-
-<section class="section two" id="request">
-  <div class="intro"><div class="kicker">01 / NEW ENQUIRY</div><h2>Tell us what<br>happened.</h2><p>Complete the form with a working email address and a clear description. A reference number will be created in this browser after submission.</p><div class="notice"><b>Security reminder</b><br>Never submit your account password, one-time verification code, bank PIN, full card number or other secret login details. DriverCareHub is independent and cannot reactivate accounts on another company's platform.</div></div>
-  <form class="panel" id="requestForm">
-    <div class="panel-title"><div><b>Support enquiry</b><small>Fields marked * are required</small></div><span class="pill">STEP 1 OF 1</span></div>
-    <div class="row"><label>Full name *<input name="name" required maxlength="90" placeholder="Your full name"></label><label>Email address *<input name="email" type="email" required maxlength="140" placeholder="you@example.com"></label></div>
-    <div class="row"><label>Country *<input name="country" required maxlength="70" placeholder="Your country"></label><label>Phone number (optional)<input name="phone" maxlength="35" placeholder="Include country code"></label></div>
-    <label>Enquiry topic *<select name="topic" id="topic" required><option value="">Choose a topic</option><option>Account access and profile</option><option>Account review and reactivation guidance</option><option>Payments and earnings</option><option>Trips and delivery issues</option><option>Safety and privacy</option><option>Technical support</option><option>Other enquiry</option></select></label>
-    <label>Describe your enquiry *<textarea name="details" rows="5" required maxlength="1800" placeholder="Explain the issue and the guidance you are looking for..."></textarea><span class="hint">Do not include passwords, verification codes or financial secrets.</span></label>
-    <label class="agree"><input type="checkbox" required name="consent"><span>I understand DriverCareHub is an independent information service and is not affiliated with or authorised by Uber or another platform. I agree to be contacted about this enquiry.</span></label>
-    <button class="btn full" type="submit">Submit enquiry <span>→</span></button><div class="message" id="formMsg" aria-live="polite"></div>
-  </form>
+<section class="view" id="reactivation">
+  <div class="page-wrap"><a class="back" href="#home">← Back to support homepage</a>
+    <div class="page-title"><div class="eyebrow">ACCOUNT REVIEW GUIDANCE</div><h1>Account Review Options</h1><p>Please select an option below. DriverCareHub is an independent information service and cannot access platform accounts or decide reactivation outcomes.</p></div>
+    <div class="option-grid">
+      <button class="option" data-page="new"><div class="option-icon">＋</div><b>Start a New Enquiry</b><small>For first-time enquiries or a new request for general guidance.</small></button>
+      <button class="option" data-page="continue"><div class="option-icon">↗</div><b>Continue Existing Enquiry</b><small>Find the reference for an enquiry you previously submitted on this browser.</small></button>
+      <button class="option" data-page="track"><div class="option-icon">◷</div><b>Track Your Progress</b><small>Check the local status of an existing enquiry using its reference number.</small></button>
+    </div>
+    <div class="disclosure"><b>Important:</b> This portal is not an Uber website or an official account-recovery channel. Do not send passwords, verification codes, bank details or payment-card information. We do not promise or sell account reactivation.</div>
+    <div class="review-note">We do not display invented customer testimonials or unverified review ratings.</div>
+  </div>
 </section>
 
-<section class="section track" id="track">
-  <div><div class="kicker">02 / EXISTING ENQUIRY</div><h2>Already submitted a request?</h2><p style="color:#70777d;line-height:1.7;font-size:14px">Enter the reference number and email address used when you submitted the enquiry to view its locally saved status.</p></div>
-  <form class="panel" id="trackForm"><div class="panel-title"><b>Track your enquiry</b><span class="pill">REQUEST STATUS</span></div>
-    <label>Reference number<input name="reference" required placeholder="e.g. DCH-ABC123"></label>
-    <label>Email address<input name="email" type="email" required placeholder="Email used for the enquiry"></label>
-    <button class="btn full" type="submit">Check status <span>→</span></button><div class="message" id="trackMsg" aria-live="polite"></div><div class="result" id="result" hidden></div>
-  </form>
+<section class="view" id="new">
+  <div class="page-wrap"><a class="back" href="#reactivation">← Back to options</a>
+    <div class="page-title"><div class="eyebrow">NEW ENQUIRY</div><h1>Submit a New Enquiry</h1><p>Complete the required fields and review the independent-service notice before submitting.</p></div>
+    <form class="form-panel" id="newForm">
+      <div class="form-heading"><div><b>Contact and enquiry details</b><small>Fields marked * are required</small></div><span class="step">STEP 1 OF 2</span></div>
+      <div class="form-row"><label>Full Name *<input name="name" required maxlength="100" autocomplete="name"></label><label>Email Address *<input name="email" type="email" required maxlength="150" autocomplete="email"></label></div>
+      <div class="form-row"><label>Country *<select name="country" required><option value="">Select your country</option><option>Nigeria</option><option>United States</option><option>United Kingdom</option><option>Canada</option><option>Australia</option><option>Germany</option><option>France</option><option>Spain</option><option>Other</option></select></label><label>Phone Number (optional)<input name="phone" maxlength="40" placeholder="Include country code"></label></div>
+      <label>What is your enquiry about? *<select name="reason" required><option value="">Select a topic</option><option>Account access</option><option>Account deactivation information</option><option>Appeal process guidance</option><option>Payments or earnings</option><option>Other</option></select></label>
+      <label>More details (optional)<textarea name="details" rows="4" maxlength="1500" placeholder="Describe the issue. Do not include passwords or verification codes."></textarea></label>
+      <div class="disclosure"><b>Independent-service notice:</b> DriverCareHub is not affiliated with Uber or any other platform. We cannot access accounts, submit appeals on a platform's behalf, or guarantee reactivation. For account decisions, contact the platform through its official app or website.</div>
+      <div class="agreement"><h3>INDEPENDENT INFORMATION SERVICE ACKNOWLEDGEMENT</h3>
+        <ol><li><b>Information.</b> You confirm that the contact details and enquiry information you provide are accurate and that you are entitled to share them.</li>
+        <li><b>Scope.</b> DriverCareHub may provide general information and guidance only. It is not an agent of Uber or another platform and cannot access or change platform accounts.</li>
+        <li><b>No outcome guarantee.</b> Any decision about account access, suspension or reactivation is made solely by the relevant platform. No outcome is promised.</li>
+        <li><b>Fees.</b> This demonstration portal does not collect payments. Do not send money or gift cards in response to an unsolicited reactivation promise.</li>
+        <li><b>Privacy.</b> Do not include passwords, one-time codes, bank PINs or full payment-card details in this form.</li></ol>
+        <label class="checkline"><input type="checkbox" name="agreement" required><span>I have read and understood this acknowledgement and agree to submit my enquiry to DriverCareHub. *</span></label>
+      </div>
+      <div class="form-heading"><div><b>Digital acknowledgement</b><small>Draw your signature below to acknowledge this enquiry</small></div><span class="step">STEP 2 OF 2</span></div>
+      <div class="signature-box"><canvas id="signature" aria-label="Signature drawing area"></canvas><div class="signature-actions"><small>Use your finger or mouse to sign</small><button class="btn light small" type="button" id="clearSignature">Clear signature</button></div></div>
+      <label class="checkline" style="margin:15px 0"><input type="checkbox" name="signatureConfirm" required><span>I confirm that this digital mark is my acknowledgement of the notice above. *</span></label>
+      <div class="hero-actions"><button class="btn light" type="button" id="downloadAgreement">Download acknowledgement (TXT)</button><button class="btn" type="submit">Submit Enquiry →</button></div>
+      <div class="message" id="newMessage" role="status"></div>
+    </form>
+  </div>
 </section>
 
-<section class="section faq" id="faq"><div class="kicker">QUICK ANSWERS</div><h2>Frequently asked questions</h2>
-  <details><summary>Is DriverCareHub an official Uber support service?</summary><p>No. DriverCareHub is an independent information and enquiry website. It is not affiliated with, endorsed by, or operated by Uber or any other transport platform.</p></details>
-  <details><summary>Can DriverCareHub reactivate my driver account?</summary><p>No. Only the relevant platform can review or reactivate an account. We can provide general information about preparing an appeal and finding the platform's official support channel.</p></details>
-  <details><summary>How do I check my enquiry?</summary><p>Use the reference number displayed after submitting your enquiry and the same email address. This single-file demonstration stores records only in the browser where they were submitted.</p></details>
-  <details><summary>Where should I submit an appeal?</summary><p>Use the official app or website of the platform concerned. Do not share your password or verification codes with third parties.</p></details>
+<section class="view" id="continue">
+  <div class="page-wrap"><a class="back" href="#reactivation">← Back to options</a>
+    <div class="page-title"><div class="eyebrow">EXISTING ENQUIRY</div><h1>Continue Existing Enquiry</h1><p>Enter the email address and reference number from your previous submission on this browser.</p></div>
+    <form class="form-panel" id="continueForm"><label>Email Address *<input name="email" type="email" required placeholder="Enter your email address"></label><label>Enquiry Reference *<input name="reference" required placeholder="Enter your reference number"></label><button class="btn full" type="submit">Find My Enquiry →</button><div class="message" id="continueMessage"></div><div class="status-result" id="continueResult" hidden></div></form>
+  </div>
+</section>
+
+<section class="view" id="track">
+  <div class="page-wrap"><a class="back" href="#reactivation">← Back to options</a>
+    <div class="page-title"><div class="eyebrow">REQUEST STATUS</div><h1>Track Your Enquiry</h1><p>Enter the email address and reference number used when submitting your enquiry.</p></div>
+    <form class="form-panel" id="trackForm"><label>Email Address *<input name="email" type="email" required placeholder="Enter your email address"></label><label>Enquiry Reference *<input name="reference" required placeholder="Enter your reference number"></label><button class="btn full" type="submit">Check Progress →</button><div class="message" id="trackMessage"></div><div class="status-result" id="trackResult" hidden></div></form>
+  </div>
 </section>
 </main>
-<footer><div class="logo">DriverCare<span>Hub</span></div><p>Independent driver information and enquiry portal. Not affiliated with or endorsed by Uber or any other platform.</p><span>© <span id="year"></span> DriverCareHub</span></footer>
+<footer><div class="logo">DriverCare<span>Hub</span></div><p>Independent driver information and enquiry portal. Not affiliated with or endorsed by Uber or any other platform.</p><span>© <span id="year"></span> DriverCareHub · Privacy · Terms</span></footer>
+
 <script>
 "use strict";
-const $ = s => document.querySelector(s);
-const escapeHTML = value => String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const getRequests = () => { try { return JSON.parse(localStorage.getItem("dch_requests") || "[]"); } catch { return []; } };
-const saveRequests = list => localStorage.setItem("dch_requests", JSON.stringify(list));
-$("#year").textContent = new Date().getFullYear();
-$("#menuBtn").addEventListener("click", () => $("#nav").classList.toggle("open"));
-$("#nav").querySelectorAll("a").forEach(a => a.addEventListener("click", () => $("#nav").classList.remove("open")));
-document.querySelectorAll("[data-topic]").forEach(card => card.addEventListener("click", () => {
-  $("#topic").value = card.dataset.topic;
-  $("#request").scrollIntoView({behavior:"smooth"});
-}));
-$("#requestForm").addEventListener("submit", event => {
-  event.preventDefault();
-  const form = event.currentTarget;
-  const data = Object.fromEntries(new FormData(form).entries());
-  const reference = "DCH-" + Math.random().toString(36).slice(2,8).toUpperCase();
-  const request = {reference, name:data.name.trim(), email:data.email.trim().toLowerCase(), country:data.country.trim(), phone:data.phone.trim(), topic:data.topic, details:data.details.trim(), status:"Received", createdAt:new Date().toISOString()};
-  const requests = getRequests();
-  requests.unshift(request);
-  saveRequests(requests);
-  $("#formMsg").className = "message";
-  $("#formMsg").textContent = "Enquiry saved in this browser. Your reference number is " + reference + ". Keep it to check your status.";
-  form.reset();
-});
-$("#trackForm").addEventListener("submit", event => {
-  event.preventDefault();
-  const data = Object.fromEntries(new FormData(event.currentTarget).entries());
-  const found = getRequests().find(item => item.reference.toUpperCase() === data.reference.trim().toUpperCase() && item.email === data.email.trim().toLowerCase());
-  const msg = $("#trackMsg"), result = $("#result");
-  if (!found) {
-    msg.className = "message error";
-    msg.textContent = "No matching request was found in this browser. Check the reference and email address.";
-    result.hidden = true;
-    return;
-  }
-  msg.textContent = "";
-  result.hidden = false;
-  result.innerHTML = "<b>" + escapeHTML(found.reference) + "</b><br><span class='status'>" + escapeHTML(found.status) + "</span><br>Topic: " + escapeHTML(found.topic) + "<br>Submitted: " + new Date(found.createdAt).toLocaleString();
-});
+const $=s=>document.querySelector(s);
+const allViews=[...document.querySelectorAll(".view")];
+function showPage(id){const target=document.getElementById(id)||$("#home");allViews.forEach(v=>v.classList.toggle("active",v===target));$("#nav").classList.remove("open");window.scrollTo({top:0,behavior:"smooth"});history.replaceState(null,"","#"+target.id);}
+document.addEventListener("click",e=>{const el=e.target.closest("[data-page]");if(el){e.preventDefault();showPage(el.dataset.page);}});
+$("#menuBtn").addEventListener("click",()=>$("#nav").classList.toggle("open"));
+window.addEventListener("hashchange",()=>{const id=location.hash.slice(1);if(document.getElementById(id)?.classList.contains("view"))showPage(id);});
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const getCases=()=>{try{return JSON.parse(localStorage.getItem("dch_cases")||"[]")}catch{return[]}};
+const putCases=a=>localStorage.setItem("dch_cases",JSON.stringify(a));
+const ref=()=>"DCH-"+Math.random().toString(36).slice(2,8).toUpperCase();
+$("#year").textContent=new Date().getFullYear();
+document.querySelectorAll("[data-topic]").forEach(btn=>btn.addEventListener("click",()=>{showPage("new");$("#newForm").elements.reason.value="Other";$("#newForm").elements.details.value="I need information about: "+btn.dataset.topic+". "}));
+/* Signature pad */
+const canvas=$("#signature"),ctx=canvas.getContext("2d");let drawing=false,hasSignature=false,last={x:0,y:0};
+function resizeCanvas(){const ratio=window.devicePixelRatio||1;const w=canvas.clientWidth,h=125;const saved=hasSignature?canvas.toDataURL():null;canvas.width=w*ratio;canvas.height=h*ratio;ctx.setTransform(ratio,0,0,ratio,0,0);ctx.lineWidth=2;ctx.lineCap="round";ctx.strokeStyle="#111";if(saved){const img=new Image();img.onload=()=>ctx.drawImage(img,0,0,w,h);img.src=saved;}}
+function point(e){const r=canvas.getBoundingClientRect();return{x:e.clientX-r.left,y:e.clientY-r.top}}
+canvas.addEventListener("pointerdown",e=>{drawing=true;last=point(e);canvas.setPointerCapture(e.pointerId);});
+canvas.addEventListener("pointermove",e=>{if(!drawing)return;const p=point(e);ctx.beginPath();ctx.moveTo(last.x,last.y);ctx.lineTo(p.x,p.y);ctx.stroke();last=p;hasSignature=true;});
+["pointerup","pointercancel","pointerleave"].forEach(n=>canvas.addEventListener(n,()=>drawing=false));
+window.addEventListener("resize",resizeCanvas);resizeCanvas();
+$("#clearSignature").addEventListener("click",()=>{ctx.clearRect(0,0,canvas.width,canvas.height);hasSignature=false;});
+function downloadText(){const text="DRIVERCAREHUB — INDEPENDENT INFORMATION SERVICE ACKNOWLEDGEMENT\n\nDriverCareHub is independent and is not affiliated with Uber or another platform. It cannot access accounts, submit appeals on a platform's behalf, or guarantee account reactivation. Account decisions are made solely by the relevant platform. This demonstration portal does not collect payments. Do not provide passwords, one-time codes, bank PINs or full card details.\n\nBy submitting the enquiry, the requester confirms that the information supplied is accurate and agrees to be contacted about this enquiry.\n";const blob=new Blob([text],{type:"text/plain"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="DriverCareHub-acknowledgement.txt";a.click();URL.revokeObjectURL(a.href);}
+$("#downloadAgreement").addEventListener("click",downloadText);
+$("#newForm").addEventListener("submit",e=>{e.preventDefault();const f=e.currentTarget;if(!hasSignature){$("#newMessage").className="message error";$("#newMessage").textContent="Please draw your digital acknowledgement before submitting.";return;}const d=Object.fromEntries(new FormData(f).entries());const item={reference:ref(),name:d.name,email:d.email.toLowerCase(),country:d.country,phone:d.phone,reason:d.reason,details:d.details,status:"Received",createdAt:new Date().toISOString()};const cases=getCases();cases.unshift(item);putCases(cases);$("#newMessage").className="message";$("#newMessage").textContent="Your enquiry has been saved in this browser. Reference: "+item.reference+". Keep this number to continue or track your enquiry.";f.reset();ctx.clearRect(0,0,canvas.width,canvas.height);hasSignature=false;});
+function lookup(form,resultEl,messageEl){const d=Object.fromEntries(new FormData(form).entries());const item=getCases().find(x=>x.reference.toUpperCase()===d.reference.trim().toUpperCase()&&x.email===d.email.trim().toLowerCase());if(!item){messageEl.className="message error";messageEl.textContent="No matching enquiry was found in this browser. Check the reference and email address.";resultEl.hidden=true;return;}messageEl.textContent="";resultEl.hidden=false;resultEl.innerHTML="<b>"+esc(item.reference)+"</b><br><span class='status-pill'>"+esc(item.status)+"</span><br>Topic: "+esc(item.reason)+"<br>Submitted: "+new Date(item.createdAt).toLocaleString()+"<br><br>For official account decisions, contact the relevant platform directly.";}
+$("#trackForm").addEventListener("submit",e=>{e.preventDefault();lookup(e.currentTarget,$("#trackResult"),$("#trackMessage"));});
+$("#continueForm").addEventListener("submit",e=>{e.preventDefault();lookup(e.currentTarget,$("#continueResult"),$("#continueMessage"));});
 </script>
 </body>
 </html>
