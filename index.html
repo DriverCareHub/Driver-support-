@@ -3,129 +3,148 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DriverCareHub | Help Centre</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DriverCareHub | Help</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#202923;background:#fff}
-.top{background:#092b1b;color:#fff;padding:15px 7%;display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:23px;font-weight:700;color:#5ce09a}
-.language{background:transparent;color:#fff;border:1px solid #668b75;padding:9px;border-radius:5px}
-.hero{background:#f1f7f3;text-align:center;padding:65px 18px 55px}
-.hero h1{font-size:45px;margin:0 0 15px;color:#123c27}
-.hero p{color:#59665e;font-size:16px}
-.search{max-width:590px;margin:28px auto 0;display:flex;background:#fff;border:1px solid #cbd8ce;border-radius:7px;padding:5px}
-.search input{flex:1;border:0;outline:0;padding:13px;font-size:15px;min-width:0}
-.search button{background:#087c43;color:#fff;border:0;border-radius:5px;padding:12px 20px}
-.content{max-width:1050px;margin:auto;padding:50px 22px}
-.content h2{text-align:center;font-size:29px;color:#183d29}
-.sub{text-align:center;color:#68736b;margin-bottom:35px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:19px}
-.card{border:1px solid #e0e8e2;border-radius:9px;padding:25px;background:white;transition:.2s}
-.card:hover{border-color:#32a76b;box-shadow:0 5px 18px #0000000b}
-.symbol{font-size:27px}
-.card h3{color:#17452d;margin:12px 0 8px}
-.card p{color:#68736b;font-size:14px;line-height:1.7}
-.card a{color:#087c43;text-decoration:none;font-weight:bold;font-size:14px}
-.notice{background:#eff7f1;border-radius:9px;padding:25px;margin-top:38px;text-align:center}
-.notice h3{color:#17452d}
-.notice p{color:#59665e}
-.notice a{display:inline-block;background:#087c43;color:white;text-decoration:none;padding:12px 22px;border-radius:5px;margin-top:8px}
-footer{background:#092b1b;color:#d2e2d7;padding:35px 7%;text-align:center;font-size:13px;line-height:1.8}
-footer strong{color:#5ce09a}
-@media(max-width:500px){.hero h1{font-size:35px}.top{padding:14px 5%}.logo{font-size:20px}}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#171717;background:#fff}
+a{color:inherit;text-decoration:none}
+.topbar{height:76px;border-bottom:1px solid #eee;display:flex;align-items:center;justify-content:space-between;padding:0 6%}
+.brand{font-size:25px;font-weight:700;letter-spacing:-1px}
+.topright{display:flex;align-items:center;gap:25px}
+.lang{border:0;background:white;font-size:14px;padding:10px}
+.login{font-size:14px}
+.signup{background:#111;color:white;padding:12px 20px;border-radius:30px;font-size:14px}
+.hero{padding:70px 8% 55px}
+.hero h1{font-size:58px;letter-spacing:-2px;margin:0 0 24px;font-weight:700}
+.hero p{font-size:17px;line-height:1.7;max-width:720px;color:#444;margin:0}
+.independent{font-size:12px;color:#777;margin-top:17px}
+.categories{padding:25px 8% 65px}
+.categories h2{font-size:25px;margin-bottom:25px}
+.category-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.category{border-top:1px solid #ddd;padding:22px 8px 20px 0;min-height:115px;display:flex;flex-direction:column;justify-content:space-between}
+.category h3{font-size:16px;font-weight:600;margin:0}
+.arrow{font-size:21px;text-align:right}
+.help{background:#f7f7f7;padding:55px 8%;display:flex;justify-content:space-between;align-items:center;gap:30px}
+.help h2{font-size:30px;margin:0 0 12px}
+.help p{color:#555;line-height:1.6;max-width:570px}
+.help a{background:#111;color:white;border-radius:30px;padding:14px 23px;white-space:nowrap}
+footer{background:#080808;color:#fff;padding:55px 8% 25px}
+.footer-brand{font-size:27px;font-weight:bold;margin-bottom:45px}
+.footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
+.footer-col h3{font-size:15px;margin-bottom:20px}
+.footer-col a{display:block;color:#ddd;font-size:14px;margin:15px 0}
+.footer-bottom{border-top:1px solid #444;margin-top:45px;padding-top:25px;color:#aaa;font-size:12px;line-height:1.8}
+@media(max-width:700px){
+.topbar{padding:0 5%;height:68px}
+.brand{font-size:21px}
+.topright{gap:10px}
+.login{display:none}
+.hero{padding:55px 6% 40px}
+.hero h1{font-size:46px}
+.categories{padding:25px 6% 45px}
+.category-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+.help{padding:40px 6%;display:block}
+.help a{display:inline-block;margin-top:12px}
+footer{padding:40px 6% 22px}
+.footer-grid{grid-template-columns:repeat(2,1fr);gap:25px}
+}
 </style>
 </head>
 <body>
-<header class="top">
-<div class="logo">DriverCareHub</div>
-<select class="language" aria-label="Language">
+
+<header class="topbar">
+<a class="brand" href="#">DriverCareHub</a>
+<div class="topright">
+<select class="lang" aria-label="Select language">
 <option>English</option>
-<option>French</option>
-<option>Spanish</option>
+<option>Français</option>
+<option>Español</option>
 </select>
+<a class="login" href="#support">Help</a>
+<a class="signup" href="#support">Get Support</a>
+</div>
 </header>
 
+<main>
 <section class="hero">
-<h1>Help Centre</h1>
-<p>Welcome to DriverCareHub. How can we help you today?</p>
-<div class="search">
-<input id="searchInput" type="search" placeholder="Search for help and support...">
-<button onclick="searchHelp()">Search</button>
+<h1>Help</h1>
+<p>Welcome to DriverCareHub. Find information and independent assistance for your driver account enquiries, account reactivation guidance, documents and other support concerns.</p>
+<div class="independent">Independent driver assistance service.</div>
+</section>
+
+<section class="categories" id="support">
+<h2>Browse help topics</h2>
+<div class="category-grid">
+<a class="category" href="#contact">
+<h3>Account Reactivation</h3><span class="arrow">↗</span>
+</a>
+<a class="category" href="#contact">
+<h3>Account and Profile</h3><span class="arrow">↗</span>
+</a>
+<a class="category" href="#contact">
+<h3>Document Assistance</h3><span class="arrow">↗</span>
+</a>
+<a class="category" href="#contact">
+<h3>Account Security</h3><span class="arrow">↗</span>
+</a>
+<a class="category" href="#contact">
+<h3>Appeal Guidance</h3><span class="arrow">↗</span>
+</a>
+<a class="category" href="#contact">
+<h3>Payment Enquiries</h3><span class="arrow">↗</span>
+</a>
+<a class="category" href="#contact">
+<h3>General Support</h3><span class="arrow">↗</span>
+</a>
+<a class="category" href="#contact">
+<h3>Other Questions</h3><span class="arrow">↗</span>
+</a>
 </div>
 </section>
 
-<main class="content">
-<h2>How can we assist you?</h2>
-<p class="sub">Explore our support topics and find guidance for your concerns.</p>
-
-<div class="grid" id="supportGrid">
-<div class="card">
-<div class="symbol">👤</div>
-<h3>Account Assistance</h3>
-<p>Guidance for account access difficulties, account updates and common account enquiries.</p>
-<a href="#contact">Get assistance →</a>
+<section class="help" id="contact">
+<div>
+<h2>Need more help?</h2>
+<p>Our independent assistance team can help you understand your support options and organise your enquiry.</p>
 </div>
-
-<div class="card">
-<div class="symbol">🔄</div>
-<h3>Reactivation Guidance</h3>
-<p>Understand possible next steps when your driver account has been deactivated or restricted.</p>
-<a href="#contact">Get assistance →</a>
-</div>
-
-<div class="card">
-<div class="symbol">📄</div>
-<h3>Document Support</h3>
-<p>Guidance on document requirements, reviews, updates and submission questions.</p>
-<a href="#contact">Get assistance →</a>
-</div>
-
-<div class="card">
-<div class="symbol">🛡️</div>
-<h3>Account Security</h3>
-<p>Learn how to protect your account and respond to suspicious account activity.</p>
-<a href="#contact">Get assistance →</a>
-</div>
-
-<div class="card">
-<div class="symbol">📨</div>
-<h3>Appeal Guidance</h3>
-<p>Organise your information and understand how to prepare a clear support appeal.</p>
-<a href="#contact">Get assistance →</a>
-</div>
-
-<div class="card">
-<div class="symbol">💬</div>
-<h3>General Enquiries</h3>
-<p>Find guidance for other driver-related questions and support concerns.</p>
-<a href="#contact">Get assistance →</a>
-</div>
-</div>
-
-<div class="notice" id="contact">
-<h3>Still need assistance?</h3>
-<p>Contact our independent assistance team for guidance with your enquiry.</p>
-<a href="mailto:support@drivercarehub.example">Contact Support</a>
-</div>
+<a href="mailto:support@drivercarehub.example">Contact Support ↗</a>
+</section>
 </main>
 
 <footer>
-<strong>DriverCareHub</strong>
-<p>Independent driver assistance and guidance.</p>
-<p>We are not affiliated with, endorsed by, or operated by Uber or any other rideshare platform.</p>
-<p>Never share your password, OTP or verification codes with anyone.</p>
+<div class="footer-brand">DriverCareHub</div>
+<div class="footer-grid">
+<div class="footer-col">
+<h3>Company</h3>
+<a href="#">About us</a>
+<a href="#">Our services</a>
+<a href="#">Contact</a>
+</div>
+<div class="footer-col">
+<h3>Driver Support</h3>
+<a href="#support">Account assistance</a>
+<a href="#support">Reactivation guidance</a>
+<a href="#support">Document guidance</a>
+</div>
+<div class="footer-col">
+<h3>Resources</h3>
+<a href="#support">Help topics</a>
+<a href="#support">Frequently asked questions</a>
+<a href="#support">Support enquiries</a>
+</div>
+<div class="footer-col">
+<h3>Legal</h3>
+<a href="#">Privacy policy</a>
+<a href="#">Terms of service</a>
+<a href="#">Disclaimer</a>
+</div>
+</div>
+<div class="footer-bottom">
+<p>DriverCareHub is an independent driver assistance service. It is not affiliated with, endorsed by, or operated by Uber or any other rideshare platform.</p>
+<p>Never share your password, OTP or verification codes.</p>
 <p>© 2026 DriverCareHub. All rights reserved.</p>
+</div>
 </footer>
-
-<script>
-function searchHelp(){
-const q=document.getElementById('searchInput').value.toLowerCase().trim();
-const cards=document.querySelectorAll('.card');
-cards.forEach(card=>{
-card.style.display=card.innerText.toLowerCase().includes(q)?'block':'none';
-});
-}
-</script>
 </body>
 </html>
