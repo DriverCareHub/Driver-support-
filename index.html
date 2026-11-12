@@ -1,209 +1,141 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="DriverCareHub independent driver support and request guidance portal.">
 <title>DriverCareHub | Support</title>
 <style>
-*{box-sizing:border-box}
-body{margin:0;background:#fff;color:#000;font-family:Arial,Helvetica,sans-serif}
-a{text-decoration:none;color:inherit}
-.topbar{height:76px;padding:0 6%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ddd}
-.logo{font-size:27px;font-weight:800;letter-spacing:-1.5px}
-.menu{display:flex;align-items:center;gap:25px;font-size:14px}
-.menu a{font-weight:600}
-.menu button{border:1px solid #000;background:#fff;padding:11px 17px;border-radius:25px;font-weight:bold}
-.hero{padding:65px 7% 35px}
-.hero h1{font-size:45px;letter-spacing:-1.8px;margin:0 0 18px}
-.hero p{font-size:17px;line-height:1.7;max-width:800px;margin:0}
-.smallnote{font-size:12px;margin-top:16px}
-.categories{padding:25px 7% 75px}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.card{background:#000;color:#fff;min-height:190px;padding:25px;border-radius:8px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .2s}
-.card:hover{transform:translateY(-3px)}
-.card .symbol{width:37px;height:37px}
-.card h2{font-size:20px;margin:20px 0 0;font-weight:600}
-.arrow{font-size:23px;text-align:right}
-.section-title{font-size:25px;margin:0 0 22px}
-.footer{background:#000;color:#fff;padding:65px 7% 30px}
-.footer-logo{font-size:38px;font-weight:800;letter-spacing:-2px;margin-bottom:45px}
-.footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:35px}
-.footer-col h3{font-size:16px;margin:0 0 23px}
-.footer-col a{display:block;font-size:14px;margin:17px 0;color:#fff}
-.footer-col a:hover{text-decoration:underline}
-.social{display:flex;gap:12px;margin:45px 0 25px;flex-wrap:wrap}
-.social a{width:43px;height:43px;border:1px solid #fff;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:17px}
-.local{display:flex;gap:25px;align-items:center;flex-wrap:wrap;font-size:14px;margin-bottom:40px}
-.downloads{display:flex;gap:12px;flex-wrap:wrap;margin:25px 0 35px}
-.store{border:1px solid white;border-radius:6px;padding:10px 16px;min-width:165px;font-size:11px}
-.store strong{display:block;font-size:16px;margin-top:3px}
-.legal{border-top:1px solid #555;padding-top:25px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:12px;color:#ddd}
-.legal-links{display:flex;gap:22px;flex-wrap:wrap}
-.disclaimer{font-size:12px;color:#aaa;line-height:1.7;margin-top:25px;max-width:850px}
-@media(max-width:750px){
-.topbar{padding:0 5%;height:68px}
-.logo{font-size:22px}
-.menu{gap:12px}
-.menu .hide{display:none}
-.hero{padding:48px 6% 28px}
-.hero h1{font-size:39px}
-.hero p{font-size:16px}
-.categories{padding:20px 6% 55px}
-.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
-.card{min-height:155px;padding:17px}
-.card h2{font-size:16px}
-.card .symbol{width:31px;height:31px}
-.footer{padding:45px 6% 25px}
-.footer-grid{grid-template-columns:repeat(2,1fr);gap:30px 20px}
-.footer-logo{font-size:32px}
-}
-@media(max-width:360px){
-.grid{grid-template-columns:1fr}
-}
+:root{--black:#080909;--ink:#17191b;--muted:#70777d;--line:#e4e6e7;--soft:#f5f6f6;--lime:#d9f36b;--white:#fff;--radius:12px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:85px}body{margin:0;color:var(--ink);font-family:Arial,Helvetica,sans-serif;background:#fff;font-size:15px}
+a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}
+.topbar{height:34px;background:var(--black);color:#ddd;display:flex;justify-content:space-between;align-items:center;padding:0 7%;font-size:10px;letter-spacing:1px}
+header{height:76px;padding:0 7%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ddd;background:#fff;position:sticky;top:0;z-index:10}
+.logo{font-size:25px;font-weight:800;letter-spacing:-1.3px}.logo span{font-weight:400;color:#81878a}
+nav{display:flex;align-items:center;gap:25px;font-size:13px;font-weight:600}nav a:hover{opacity:.6}
+.menu{display:none;border:1px solid #ddd;background:white;border-radius:30px;padding:10px 14px}
+.hero{padding:70px 7% 55px;display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center;background:#f5f6f3}
+.kicker{font-size:10px;font-weight:700;letter-spacing:1.7px;color:#687b28;margin-bottom:17px}
+h1{font-size:clamp(40px,5vw,62px);line-height:1.05;letter-spacing:-2.8px;margin:0 0 20px;font-weight:800}
+h1 span{color:#778e29}.hero p{font-size:16px;line-height:1.75;color:#626a70;max-width:590px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:27px}.btn{border:0;border-radius:5px;padding:14px 19px;background:#090a0a;color:white;font-size:13px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:20px}.btn:hover{opacity:.82}.btn.alt{background:white;color:#17191b;border:1px solid #d8dcda}.btn.full{width:100%}
+.hero-art{min-height:290px;display:grid;place-items:center;position:relative}.mock-card{width:min(290px,85%);background:#fff;border:1px solid #e5e8e3;border-radius:15px;padding:25px;box-shadow:0 22px 55px #202b1014;transform:rotate(2deg)}
+.mock-top{display:flex;justify-content:space-between;color:#758d2c;font-size:10px;font-weight:700;letter-spacing:1px}.mock-title{font-size:35px;font-weight:800;line-height:1.08;margin:32px 0 22px;letter-spacing:-1px}.line{height:7px;border-radius:8px;background:#ecefeb;margin:10px 0;width:85%}.line:nth-child(2){width:66%}.mock-bottom{border-top:1px solid #eee;padding-top:17px;margin-top:22px;font-size:11px;color:#596166}
+.section{padding:75px 7%}.section-head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:28px}.section h2,.band h2{font-size:32px;letter-spacing:-1.2px;margin:0 0 12px}.section-head p{color:var(--muted);max-width:300px;font-size:13px;line-height:1.6}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.card{min-height:160px;border:1px solid var(--line);border-radius:8px;padding:21px;display:flex;flex-direction:column;align-items:flex-start;background:#fff;text-align:left;cursor:pointer;transition:.2s}.card:hover{transform:translateY(-3px);border-color:#a7bd5a}.symbol{width:36px;height:36px;background:#f0f4e5;border-radius:8px;display:grid;place-items:center;margin-bottom:16px;font-size:18px}.card b{font-size:15px;margin-bottom:7px}.card small{font-size:11px;color:#7d858a;line-height:1.5}.band{padding:48px 7%;background:#15191a;color:white;display:flex;justify-content:space-between;align-items:center;gap:25px}.band p{color:#c3c8c6;max-width:550px;font-size:13px;line-height:1.7}.band .btn{background:var(--lime);color:#111}
+.two{display:grid;grid-template-columns:.75fr 1.25fr;gap:8%;align-items:start}.intro h2{font-size:42px;line-height:1.1;letter-spacing:-1.8px}.intro p{color:var(--muted);line-height:1.8;font-size:14px}.notice{padding:14px;background:#f1f5e8;border-radius:7px;color:#5f6b48;font-size:11px;line-height:1.7;margin-top:25px}
+.panel{border:1px solid var(--line);border-radius:10px;padding:25px;background:white;box-shadow:0 10px 35px #1111}
+.panel-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}.panel-title b{font-size:18px}.panel-title small{display:block;color:#8a9195;font-size:10px;margin-top:5px}.pill{font-size:9px;letter-spacing:.7px;background:#eff4df;color:#667c24;padding:7px 10px;border-radius:20px;font-weight:700}
+label{display:block;font-size:11px;font-weight:700;color:#42484c;margin-bottom:16px}input,select,textarea{display:block;width:100%;margin-top:8px;border:1px solid #dfe3e4;border-radius:5px;padding:13px;background:#fff;color:#17191b;font-size:12px;outline:none}input:focus,select:focus,textarea:focus{border-color:#a8c450;box-shadow:0 0 0 3px #d9f36b35}textarea{resize:vertical;line-height:1.6}.row{display:grid;grid-template-columns:1fr 1fr;gap:13px}.hint{display:block;color:#93999c;font-weight:400;font-size:10px;margin-top:6px}.agree{display:flex;align-items:flex-start;gap:9px;font-weight:400;line-height:1.6;color:#687076}.agree input{width:15px;height:15px;margin:1px 0 0;flex:none;accent-color:#78912c}
+.message{font-size:12px;line-height:1.6;margin-top:12px;color:#536d1d}.message.error{color:#b13d36}.steps{display:flex;gap:7px;margin:0 0 20px}.steps span{height:4px;flex:1;border-radius:5px;background:#e8ebea}.steps span.active{background:#a7c44e}
+.track{background:#f6f7f5;display:grid;grid-template-columns:1fr 1fr;gap:8%;align-items:center}.track .panel{max-width:500px;width:100%}.result{background:#f0f4e7;border-radius:7px;padding:15px;margin-top:14px;font-size:12px;line-height:1.8}.status{display:inline-block;background:#e0edc1;color:#526d17;padding:4px 9px;border-radius:20px;font-weight:700;font-size:10px}
+.faq{max-width:1100px;margin:auto}.faq h2{margin-bottom:25px}details{border-top:1px solid var(--line);padding:18px 2px}details:last-child{border-bottom:1px solid var(--line)}summary{font-weight:700;font-size:13px;cursor:pointer}details p{font-size:12px;color:var(--muted);line-height:1.7;max-width:700px}
+footer{background:#090a0a;color:#aeb4b5;padding:32px 7%;font-size:10px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}footer .logo{color:white;font-size:20px}footer p{max-width:450px;line-height:1.6}
+@media(max-width:700px){header{height:66px;padding:0 5%}.logo{font-size:22px}.menu{display:block}nav{display:none;position:absolute;top:65px;left:0;right:0;background:#fff;padding:20px 6%;border-bottom:1px solid #ddd;flex-direction:column;align-items:flex-start}nav.open{display:flex}.topbar{padding:0 5%;font-size:8px}.hero{padding:50px 6% 25px;grid-template-columns:1fr}.hero-art{min-height:250px}.section{padding:58px 6%}.section-head{display:block}.section-head p{margin-top:10px}.grid{grid-template-columns:1fr 1fr;gap:10px}.card{padding:15px;min-height:150px}.card b{font-size:13px}.band{padding:40px 6%;display:block}.band .btn{margin-top:15px}.two,.track{grid-template-columns:1fr;gap:25px}.intro h2{font-size:36px}.panel{padding:19px}.row{grid-template-columns:1fr;gap:0}footer{padding:28px 6%;display:block}footer p{margin:15px 0}}
 </style>
 </head>
 <body>
-
-<header class="topbar">
-<a class="logo" href="#">DriverCareHub</a>
-<nav class="menu">
-<a class="hide" href="#categories">Help</a>
-<a class="hide" href="#footer">About</a>
-<button onclick="location.href='#contact'">Get Support</button>
-</nav>
+<div class="topbar"><span>DRIVERCAREHUB · INDEPENDENT SUPPORT</span><span>Support information and request guidance</span></div>
+<header>
+  <a class="logo" href="#home">DriverCare<span>Hub</span></a>
+  <button class="menu" id="menuBtn" aria-label="Toggle menu">☰</button>
+  <nav id="nav"><a href="#help">Help topics</a><a href="#request">New request</a><a href="#track">Track request</a><a href="#faq">FAQs</a></nav>
 </header>
-
 <main>
-<section class="hero">
-<h1>Help</h1>
-<p>We're here to help. Looking for driver support and assistance? Explore the support resources below to find guidance for your account, documents, delivery services and other driver-related concerns.</p>
-<p class="smallnote">Independent driver assistance platform.</p>
+<section class="hero" id="home">
+  <div><div class="kicker">INDEPENDENT DRIVER SUPPORT INFORMATION</div>
+    <h1>How can we<br><span>help you today?</span></h1>
+    <p>Find general guidance, submit a support enquiry, or check the progress of a request you have already sent to DriverCareHub.</p>
+    <div class="actions"><a class="btn" href="#help">Explore help topics <span>↗</span></a><a class="btn alt" href="#track">Track a request</a></div>
+  </div>
+  <div class="hero-art"><div class="mock-card"><div class="mock-top"><span>✦ DRIVERCAREHUB</span><span>SUPPORT</span></div><div class="mock-title">We're here<br>to help.</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="mock-bottom">Independent guidance · Clear next steps</div></div></div>
 </section>
 
-<section class="categories" id="categories">
-<div class="grid">
-
-<a class="card" href="#contact">
-<svg class="symbol" viewBox="0 0 40 40" fill="none" stroke="white" stroke-width="2"><path d="M5 25h30l-3-10H9L5 25Z"/><path d="M9 15l3-7h16l3 7M8 25v6m24-6v6M12 31h16M12 20h16"/></svg>
-<h2>Riders</h2><span class="arrow">↗</span>
-</a>
-
-<a class="card" href="#contact">
-<svg class="symbol" viewBox="0 0 40 40" fill="none" stroke="white" stroke-width="2"><circle cx="20" cy="20" r="15"/><circle cx="20" cy="20" r="5"/><path d="M20 5v10m0 10v10M5 20h10m10 0h10"/></svg>
-<h2>Driving &amp; Delivering</h2><span class="arrow">↗</span>
-</a>
-
-<a class="card" href="#contact">
-<svg class="symbol" viewBox="0 0 40 40" fill="none" stroke="white" stroke-width="2"><path d="M8 7v12m5-12v12M5 19h11M10 19v14M26 7v26m0-26c8 0 9 12 0 12"/></svg>
-<h2>Food Delivery</h2><span class="arrow">↗</span>
-</a>
-
-<a class="card" href="#contact">
-<svg class="symbol" viewBox="0 0 40 40" fill="none" stroke="white" stroke-width="2"><circle cx="20" cy="12" r="7"/><path d="M7 35c0-9 5-14 13-14s13 5 13 14"/></svg>
-<h2>Account Reactivation</h2><span class="arrow">↗</span>
-</a>
-
-<a class="card" href="#contact">
-<svg class="symbol" viewBox="0 0 40 40" fill="none" stroke="white" stroke-width="2"><path d="M5 16h30v19H5zM3 16l5-9h24l5 9M14 35V22h12v13"/></svg>
-<h2>Merchants &amp; Restaurants</h2><span class="arrow">↗</span>
-</a>
-
-<a class="card" href="#contact">
-<svg class="symbol" viewBox="0 0 40 40" fill="none" stroke="white" stroke-width="2"><circle cx="9" cy="29" r="5"/><circle cx="31" cy="29" r="5"/><path d="M9 29l8-17h8l6 17M17 12h-5m5 0 8 17H9"/></svg>
-<h2>Bikes &amp; Scooters</h2><span class="arrow">↗</span>
-</a>
-
-<a class="card" href="#contact">
-<svg class="symbol" viewBox="0 0 40 40" fill="none" stroke="white" stroke-width="2"><rect x="5" y="12" width="30" height="21" rx="2"/><path d="M14 12V7h12v5M5 20h30M16 20v4h8v-4"/></svg>
-<h2>Business Support</h2><span class="arrow">↗</span>
-</a>
-
-<a class="card" href="#contact">
-<svg class="symbol" viewBox="0 0 40 40" fill="none" stroke="white" stroke-width="2"><path d="M20 5v30M5 20h30"/><circle cx="20" cy="20" r="15"/></svg>
-<h2>Health Services</h2><span class="arrow">↗</span>
-</a>
-
-<a class="card" href="#contact">
-<svg class="symbol" viewBox="0 0 40 40" fill="none" stroke="white" stroke-width="2"><path d="M3 15h23v17H3zM26 21h7l5 7v4H26z"/><circle cx="11" cy="33" r="3"/><circle cx="31" cy="33" r="3"/></svg>
-<h2>Freight Assistance</h2><span class="arrow">↗</span>
-</a>
-
-<a class="card" href="#contact">
-<svg class="symbol" viewBox="0 0 40 40" fill="none" stroke="white" stroke-width="2"><rect x="4" y="13" width="13" height="14" rx="2"/><rect x="23" y="13" width="13" height="14" rx="2"/><path d="M17 20h6M8 31h24"/></svg>
-<h2>Fleet Support</h2><span class="arrow">↗</span>
-</a>
-
-</div>
+<section class="section" id="help">
+  <div class="section-head"><div><div class="kicker">BROWSE BY TOPIC</div><h2>What do you need help with?</h2></div><p>Select a topic to pre-fill your support enquiry.</p></div>
+  <div class="grid">
+    <button class="card" data-topic="Account access and profile"><span class="symbol">⌂</span><b>Account access</b><small>Profile access and general account guidance</small></button>
+    <button class="card" data-topic="Account review and reactivation guidance"><span class="symbol">↻</span><b>Account review guidance</b><small>Understand general review and appeal steps</small></button>
+    <button class="card" data-topic="Payments and earnings"><span class="symbol">＄</span><b>Payments & earnings</b><small>Payment questions and earnings information</small></button>
+    <button class="card" data-topic="Trips and delivery issues"><span class="symbol">▣</span><b>Trips & deliveries</b><small>General help with a trip or delivery issue</small></button>
+    <button class="card" data-topic="Safety and privacy"><span class="symbol">◇</span><b>Safety & privacy</b><small>Privacy, safety and personal information</small></button>
+    <button class="card" data-topic="Technical support"><span class="symbol">⌘</span><b>Technical support</b><small>Website, app and device troubleshooting</small></button>
+  </div>
 </section>
 
-<section class="hero" id="contact">
-<h1>Need more help?</h1>
-<p>Our independent assistance service can help you organise your enquiry and understand available support options.</p>
-<p><a href="mailto:support@drivercarehub.example" style="display:inline-block;background:#000;color:#fff;padding:15px 24px;border-radius:30px;margin-top:20px">Contact Support ↗</a></p>
+<section class="band"><div><div class="kicker" style="color:#d9f36b">NEED PERSONAL GUIDANCE?</div><h2>Start with a clear description.</h2><p>Send an enquiry to DriverCareHub. We provide independent information and do not control or access any transport platform's internal account systems.</p></div><a class="btn" href="#request">Submit an enquiry ↗</a></section>
+
+<section class="section two" id="request">
+  <div class="intro"><div class="kicker">01 / NEW ENQUIRY</div><h2>Tell us what<br>happened.</h2><p>Complete the form with a working email address and a clear description. A reference number will be created in this browser after submission.</p><div class="notice"><b>Security reminder</b><br>Never submit your account password, one-time verification code, bank PIN, full card number or other secret login details. DriverCareHub is independent and cannot reactivate accounts on another company's platform.</div></div>
+  <form class="panel" id="requestForm">
+    <div class="panel-title"><div><b>Support enquiry</b><small>Fields marked * are required</small></div><span class="pill">STEP 1 OF 1</span></div>
+    <div class="row"><label>Full name *<input name="name" required maxlength="90" placeholder="Your full name"></label><label>Email address *<input name="email" type="email" required maxlength="140" placeholder="you@example.com"></label></div>
+    <div class="row"><label>Country *<input name="country" required maxlength="70" placeholder="Your country"></label><label>Phone number (optional)<input name="phone" maxlength="35" placeholder="Include country code"></label></div>
+    <label>Enquiry topic *<select name="topic" id="topic" required><option value="">Choose a topic</option><option>Account access and profile</option><option>Account review and reactivation guidance</option><option>Payments and earnings</option><option>Trips and delivery issues</option><option>Safety and privacy</option><option>Technical support</option><option>Other enquiry</option></select></label>
+    <label>Describe your enquiry *<textarea name="details" rows="5" required maxlength="1800" placeholder="Explain the issue and the guidance you are looking for..."></textarea><span class="hint">Do not include passwords, verification codes or financial secrets.</span></label>
+    <label class="agree"><input type="checkbox" required name="consent"><span>I understand DriverCareHub is an independent information service and is not affiliated with or authorised by Uber or another platform. I agree to be contacted about this enquiry.</span></label>
+    <button class="btn full" type="submit">Submit enquiry <span>→</span></button><div class="message" id="formMsg" aria-live="polite"></div>
+  </form>
+</section>
+
+<section class="section track" id="track">
+  <div><div class="kicker">02 / EXISTING ENQUIRY</div><h2>Already submitted a request?</h2><p style="color:#70777d;line-height:1.7;font-size:14px">Enter the reference number and email address used when you submitted the enquiry to view its locally saved status.</p></div>
+  <form class="panel" id="trackForm"><div class="panel-title"><b>Track your enquiry</b><span class="pill">REQUEST STATUS</span></div>
+    <label>Reference number<input name="reference" required placeholder="e.g. DCH-ABC123"></label>
+    <label>Email address<input name="email" type="email" required placeholder="Email used for the enquiry"></label>
+    <button class="btn full" type="submit">Check status <span>→</span></button><div class="message" id="trackMsg" aria-live="polite"></div><div class="result" id="result" hidden></div>
+  </form>
+</section>
+
+<section class="section faq" id="faq"><div class="kicker">QUICK ANSWERS</div><h2>Frequently asked questions</h2>
+  <details><summary>Is DriverCareHub an official Uber support service?</summary><p>No. DriverCareHub is an independent information and enquiry website. It is not affiliated with, endorsed by, or operated by Uber or any other transport platform.</p></details>
+  <details><summary>Can DriverCareHub reactivate my driver account?</summary><p>No. Only the relevant platform can review or reactivate an account. We can provide general information about preparing an appeal and finding the platform's official support channel.</p></details>
+  <details><summary>How do I check my enquiry?</summary><p>Use the reference number displayed after submitting your enquiry and the same email address. This single-file demonstration stores records only in the browser where they were submitted.</p></details>
+  <details><summary>Where should I submit an appeal?</summary><p>Use the official app or website of the platform concerned. Do not share your password or verification codes with third parties.</p></details>
 </section>
 </main>
-
-<footer class="footer" id="footer">
-<div class="footer-logo">DriverCareHub</div>
-
-<div class="footer-grid">
-<div class="footer-col">
-<h3>Company</h3>
-<a href="#">About us</a>
-<a href="#">Newsroom</a>
-<a href="#">Our services</a>
-<a href="#">Careers</a>
-</div>
-<div class="footer-col">
-<h3>Products</h3>
-<a href="#categories">Driver assistance</a>
-<a href="#categories">Account guidance</a>
-<a href="#categories">Delivery support</a>
-<a href="#categories">Business support</a>
-<a href="#categories">Fleet assistance</a>
-</div>
-<div class="footer-col">
-<h3>Global Citizenship</h3>
-<a href="#">Safety</a>
-<a href="#">Security</a>
-<a href="#">Diversity</a>
-<a href="#">Transparency</a>
-</div>
-<div class="footer-col">
-<h3>Innovation</h3>
-<a href="#">Technology</a>
-<a href="#">Digital support</a>
-</div>
-</div>
-
-<div class="social">
-<a href="#" aria-label="LinkedIn">in</a>
-<a href="#" aria-label="YouTube">▶</a>
-<a href="#" aria-label="Instagram">◎</a>
-<a href="#" aria-label="X">X</a>
-</div>
-
-<div class="local">
-<span>◎ English</span>
-<span>⌖ Global</span>
-</div>
-
-<div class="downloads">
-<div class="store">GET IT ON<strong>Google Play</strong></div>
-<div class="store">Download on the<strong>App Store</strong></div>
-</div>
-
-<div class="legal">
-<span>© 2026 DriverCareHub</span>
-<div class="legal-links">
-<a href="#">Privacy</a>
-<a href="#">Accessibility</a>
-<a href="#">Terms</a>
-</div>
-</div>
-
-<p class="disclaimer">DriverCareHub is an independent assistance service. It is not affiliated with, endorsed by, or operated by Uber or any other rideshare company. Never share your password or verification codes.</p>
-</footer>
+<footer><div class="logo">DriverCare<span>Hub</span></div><p>Independent driver information and enquiry portal. Not affiliated with or endorsed by Uber or any other platform.</p><span>© <span id="year"></span> DriverCareHub</span></footer>
+<script>
+"use strict";
+const $ = s => document.querySelector(s);
+const escapeHTML = value => String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const getRequests = () => { try { return JSON.parse(localStorage.getItem("dch_requests") || "[]"); } catch { return []; } };
+const saveRequests = list => localStorage.setItem("dch_requests", JSON.stringify(list));
+$("#year").textContent = new Date().getFullYear();
+$("#menuBtn").addEventListener("click", () => $("#nav").classList.toggle("open"));
+$("#nav").querySelectorAll("a").forEach(a => a.addEventListener("click", () => $("#nav").classList.remove("open")));
+document.querySelectorAll("[data-topic]").forEach(card => card.addEventListener("click", () => {
+  $("#topic").value = card.dataset.topic;
+  $("#request").scrollIntoView({behavior:"smooth"});
+}));
+$("#requestForm").addEventListener("submit", event => {
+  event.preventDefault();
+  const form = event.currentTarget;
+  const data = Object.fromEntries(new FormData(form).entries());
+  const reference = "DCH-" + Math.random().toString(36).slice(2,8).toUpperCase();
+  const request = {reference, name:data.name.trim(), email:data.email.trim().toLowerCase(), country:data.country.trim(), phone:data.phone.trim(), topic:data.topic, details:data.details.trim(), status:"Received", createdAt:new Date().toISOString()};
+  const requests = getRequests();
+  requests.unshift(request);
+  saveRequests(requests);
+  $("#formMsg").className = "message";
+  $("#formMsg").textContent = "Enquiry saved in this browser. Your reference number is " + reference + ". Keep it to check your status.";
+  form.reset();
+});
+$("#trackForm").addEventListener("submit", event => {
+  event.preventDefault();
+  const data = Object.fromEntries(new FormData(event.currentTarget).entries());
+  const found = getRequests().find(item => item.reference.toUpperCase() === data.reference.trim().toUpperCase() && item.email === data.email.trim().toLowerCase());
+  const msg = $("#trackMsg"), result = $("#result");
+  if (!found) {
+    msg.className = "message error";
+    msg.textContent = "No matching request was found in this browser. Check the reference and email address.";
+    result.hidden = true;
+    return;
+  }
+  msg.textContent = "";
+  result.hidden = false;
+  result.innerHTML = "<b>" + escapeHTML(found.reference) + "</b><br><span class='status'>" + escapeHTML(found.status) + "</span><br>Topic: " + escapeHTML(found.topic) + "<br>Submitted: " + new Date(found.createdAt).toLocaleString();
+});
+</script>
 </body>
 </html>
