@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uber Help & Account Reactivation</title>
+    <title>Account Reactivation | Uber Help</title>
     <style>
         :root {
             --bg-primary: #ffffff;
@@ -16,6 +16,7 @@
             --text-muted: #afafaf;
             --border-light: #e2e2e2;
             --border-dark: #333333;
+            --star-color: #ffc107;
             --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
@@ -64,401 +65,250 @@
             cursor: pointer;
         }
 
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .login-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
+        .header-link {
             color: var(--text-inverse);
             font-size: 14px;
             font-weight: 500;
-            padding: 8px 14px;
-            border-radius: 999px;
-            transition: background-color 0.2s ease;
+            transition: opacity 0.2s ease;
         }
 
-        .login-btn:hover {
-            background-color: #282828;
+        .header-link:hover {
+            opacity: 0.8;
         }
 
-        .menu-toggle {
+        /* Main Reactivation Layout */
+        .reactivation-main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 64px 24px;
+        }
+
+        .reactivation-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .reactivation-header h1 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .reactivation-header p {
+            font-size: 18px;
+            color: var(--text-secondary);
+        }
+
+        /* Options Cards Grid */
+        .options-grid {
             display: grid;
-            grid-template-columns: repeat(3, 4px);
-            gap: 3px;
-            padding: 10px;
-            border-radius: 50%;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-bottom: 48px;
+        }
+
+        .option-card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 24px 32px;
             cursor: pointer;
-            transition: background-color 0.2s ease;
+            transition: background-color 0.2s ease, transform 0.15s ease, border-color 0.2s ease;
         }
 
-        .menu-toggle:hover {
-            background-color: #282828;
+        .option-card:hover {
+            background-color: var(--bg-card-hover);
+            border-color: var(--border-dark);
+            transform: translateY(-2px);
         }
 
-        .menu-dot {
-            width: 4px;
-            height: 4px;
-            background-color: var(--text-inverse);
-            border-radius: 50%;
+        .option-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
         }
 
-        /* Sub-navigation Bar */
-        .sub-header {
-            background-color: var(--bg-primary);
-            border-bottom: 1px solid var(--border-light);
-            padding: 16px 64px;
+        .option-card p {
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        /* Media Container */
+        .media-container {
+            margin-bottom: 64px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--bg-secondary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 200px;
+        }
+
+        .media-container video {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+        }
+
+        /* Reviews Section */
+        .reviews-section {
+            background-color: var(--bg-secondary);
+            padding: 64px 24px;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .reviews-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .reviews-title-area {
+            text-align: center;
+            margin-bottom: 36px;
+        }
+
+        .reviews-title-area h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .rating-overview {
             display: flex;
             align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 16px;
         }
 
-        .sub-header-inner {
+        .stars {
+            color: var(--star-color);
+            letter-spacing: 2px;
+        }
+
+        /* Reviews Scroll / Grid */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px;
+            margin-bottom: 48px;
+        }
+
+        .review-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .review-header {
             display: flex;
             align-items: center;
             gap: 12px;
         }
 
-        .sub-header h2 {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--text-primary);
-        }
-
-        .sub-header span {
-            color: var(--border-light);
-            font-size: 20px;
-        }
-
-        /* Main Content */
-        main {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 64px 64px 96px;
-        }
-
-        .intro-section {
-            max-width: 680px;
-            margin-bottom: 48px;
-        }
-
-        .intro-section p {
-            font-size: 16px;
-            color: var(--text-primary);
-            line-height: 1.6;
-        }
-
-        /* Grid Cards */
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 24px;
-        }
-
-        .support-card {
-            background-color: var(--bg-secondary);
-            border-radius: 8px;
-            padding: 32px 24px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            gap: 16px;
-            min-height: 180px;
-            cursor: pointer;
-            transition: background-color 0.2s ease, transform 0.15s ease;
-        }
-
-        .support-card:hover {
-            background-color: var(--bg-card-hover);
-            transform: translateY(-2px);
-        }
-
-        .card-icon {
-            width: 48px;
-            height: 48px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-primary);
-        }
-
-        .support-card span {
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        /* Reactivation Form View Styles */
-        .reactivation-container {
-            max-width: 680px;
-            margin: 0 auto;
-            padding: 64px 24px 96px;
-        }
-
-        .reactivation-container h1 {
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 16px;
-        }
-
-        .reactivation-subtitle {
-            color: var(--text-secondary);
-            margin-bottom: 32px;
-            font-size: 16px;
-        }
-
-        .form-group {
-            margin-bottom: 24px;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .form-group input, 
-        .form-group select, 
-        .form-group textarea {
-            width: 100%;
-            padding: 14px 16px;
-            background: var(--bg-secondary);
-            border: 2px solid transparent;
-            border-radius: 8px;
-            font-size: 16px;
-            font-family: inherit;
-            outline: none;
-            transition: border-color 0.2s, background-color 0.2s;
-        }
-
-        .form-group input:focus, 
-        .form-group select:focus, 
-        .form-group textarea:focus {
-            background: var(--bg-primary);
-            border-color: var(--bg-dark);
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 16px;
-            background: var(--bg-dark);
-            color: var(--text-inverse);
-            font-size: 16px;
-            font-weight: 600;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-
-        .submit-btn:hover {
-            background: #333333;
-        }
-
-        .status-msg {
-            display: none;
-            margin-top: 24px;
-            padding: 16px;
-            background: var(--bg-secondary);
-            border-left: 4px solid var(--bg-dark);
-            border-radius: 4px;
-            font-size: 14px;
-        }
-
-        /* Footer */
-        footer {
+        .reviewer-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
             background-color: var(--bg-dark);
             color: var(--text-inverse);
-            padding: 64px;
-        }
-
-        .footer-container {
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-
-        .footer-logo {
-            font-size: 24px;
-            font-weight: 500;
-            margin-bottom: 48px;
-        }
-
-        .footer-links-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 32px;
-            margin-bottom: 56px;
-        }
-
-        .footer-col h4 {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: var(--text-inverse);
-        }
-
-        .footer-col a {
-            display: block;
-            font-size: 14px;
-            color: var(--text-inverse);
-            margin-bottom: 14px;
-            transition: color 0.2s ease;
-        }
-
-        .footer-col a:hover {
-            color: var(--text-muted);
-        }
-
-        .footer-middle-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 24px;
-            margin-bottom: 40px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 24px;
-        }
-
-        .social-links a {
-            width: 36px;
-            height: 36px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 6px;
-            transition: background-color 0.2s ease;
-        }
-
-        .social-links a:hover {
-            background-color: #282828;
-        }
-
-        .locale-links {
-            display: flex;
-            gap: 20px;
-        }
-
-        .locale-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 14px;
-            font-weight: 500;
-            padding: 8px 12px;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
-        }
-
-        .locale-btn:hover {
-            background-color: #282828;
-        }
-
-        .app-badges {
-            display: flex;
-            gap: 16px;
-            margin-bottom: 48px;
-        }
-
-        .store-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            border: 1px solid var(--border-dark);
-            background-color: #111111;
-            padding: 8px 16px;
-            border-radius: 6px;
-            transition: border-color 0.2s ease;
-        }
-
-        .store-badge:hover {
-            border-color: #666666;
-        }
-
-        .badge-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .badge-text span:first-child {
-            font-size: 10px;
-            color: var(--text-muted);
-            text-transform: uppercase;
-        }
-
-        .badge-text span:last-child {
-            font-size: 14px;
             font-weight: 600;
+            font-size: 14px;
         }
 
-        .footer-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 16px;
+        .reviewer-info strong {
+            font-size: 14px;
+            display: block;
+        }
+
+        .reviewer-info span {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .review-meta {
             font-size: 12px;
             color: var(--text-muted);
         }
 
-        .legal-links {
-            display: flex;
-            gap: 24px;
-        }
-
-        .legal-links a:hover {
-            color: var(--text-inverse);
-        }
-
-        /* App Switcher Dropdown */
-        .app-menu-dropdown {
-            display: none;
-            position: absolute;
-            top: 64px;
-            right: 64px;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            border: 1px solid var(--border-light);
-            border-radius: 8px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.16);
-            padding: 16px;
-            width: 240px;
-            z-index: 100;
-        }
-
-        .app-menu-dropdown.active {
-            display: block;
-        }
-
-        .app-menu-dropdown a {
-            display: block;
-            padding: 10px 12px;
-            border-radius: 6px;
+        .review-body {
             font-size: 14px;
-            font-weight: 500;
+            color: var(--text-primary);
+            line-height: 1.4;
         }
 
-        .app-menu-dropdown a:hover {
-            background-color: var(--bg-secondary);
+        /* Leave a Review Widget */
+        .leave-review-box {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 32px;
+            text-align: center;
+            max-width: 500px;
+            margin: 0 auto 48px;
+        }
+
+        .leave-review-box h3 {
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+
+        .interactive-stars {
+            font-size: 28px;
+            color: var(--border-light);
+            cursor: pointer;
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .interactive-stars span:hover,
+        .interactive-stars span.active {
+            color: var(--star-color);
+        }
+
+        .review-thanks {
+            display: none;
+            font-weight: 600;
+            color: #2e7d32;
+            margin-top: 12px;
+        }
+
+        /* Footer inside Reviews */
+        .footer-info {
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--border-light);
+            padding-top: 32px;
+        }
+
+        .footer-info-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 12px;
+        }
+
+        .footer-info-links a:hover {
+            color: var(--text-primary);
         }
 
         @media (max-width: 768px) {
-            header, .sub-header, main, footer, .reactivation-container {
-                padding-left: 24px;
-                padding-right: 24px;
+            header {
+                padding: 0 24px;
             }
-            .footer-links-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .reactivation-main {
+                padding: 32px 16px;
             }
         }
     </style>
@@ -467,306 +317,256 @@
 
     <!-- Header -->
     <header>
-        <div class="header-logo" id="homeLogo">Uber</div>
-        <div class="header-actions">
-            <a class="login-btn" aria-label="Log in" href="https://auth.uber.com/v2/?breeze_init_req_id=71901ea1-3a4b-45f4-8ada-eeefb14f246d&amp;breeze_local_zone=dca51&amp;next_url=https%3A%2F%2Fhelp.uber.com%2Fverify-session%2F&amp;sm_flow_id=67mVR0_E&amp;state=VNZTfYCuLJj6M4sKE8ZH_u4teIpTtLFuABZqDmYBryI%3D" target="_blank">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
-                Log in
-            </a>
-            <div class="menu-toggle" id="menuToggle" role="button" tabindex="0" aria-label="Products Menu">
-                <div class="menu-dot"></div><div class="menu-dot"></div><div class="menu-dot"></div>
-                <div class="menu-dot"></div><div class="menu-dot"></div><div class="menu-dot"></div>
-                <div class="menu-dot"></div><div class="menu-dot"></div><div class="menu-dot"></div>
-            </div>
+        <div class="header-logo" id="goToHome">Uber</div>
+        <div>
+            <a href="#" class="header-link" id="trackProgressBtn">Track Progress →</a>
         </div>
     </header>
 
-    <!-- App Switcher Dropdown -->
-    <div class="app-menu-dropdown" id="appMenu">
-        <a href="https://m.uber.com" target="_blank">Ride</a>
-        <a href="https://drivers.uber.com" target="_blank">Drive</a>
-        <a href="https://www.ubereats.com" target="_blank">Eat</a>
-        <a href="https://www.uber.com/business" target="_blank">Business</a>
-        <a href="https://www.uberfreight.com" target="_blank">Freight</a>
-    </div>
-
-    <!-- HOME VIEW -->
-    <div id="homeView" class="view active">
-        <div class="sub-header">
-            <div class="sub-header-inner">
-                <h2>Help</h2>
-                <span>|</span>
-            </div>
-        </div>
-
-        <main>
-            <section class="intro-section">
-                <p>We&#39;re here to help. Looking for customer service contact information? Explore support resources for the relevant products below to find the best way to reach out about your issue.</p>
-            </section>
-
-            <section>
-                <div class="cards-grid">
-                    <a class="support-card" href="https://help.uber.com/riders" target="_blank">
-                        <div class="card-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
-                        </div>
-                        <span>Riders</span>
-                    </a>
-
-                    <a class="support-card" href="https://help.uber.com/driving-and-delivering" target="_blank">
-                        <div class="card-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
-                        </div>
-                        <span>Driving &amp; Delivering</span>
-                    </a>
-
-                    <a class="support-card" href="https://help.uber.com/ubereats" target="_blank">
-                        <div class="card-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/></svg>
-                        </div>
-                        <span>Uber Eats</span>
-                    </a>
-
-                    <div class="support-card" id="reactivationLinkCard">
-                        <div class="card-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
-                        </div>
-                        <span>Account Reactivation</span>
-                    </div>
-
-                    <a class="support-card" href="https://help.uber.com/merchants-and-restaurants" target="_blank">
-                        <div class="card-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4v2h16V4zm1 10v-2l-1-5H4l-1 5v2h1v6h10v-6h4v6h2v-6h1zm-9 4H6v-4h6v4z"/></svg>
-                        </div>
-                        <span>Merchants &amp; Restaurants</span>
-                    </a>
-
-                    <a class="support-card" href="https://help.uber.com/emobility" target="_blank">
-                        <div class="card-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM5 12c-2.8 0-5 2.2-5 5s2.2 5 5 5 5-2.2 5-5-2.2-5-5-5zm0 8.5c-1.9 0-3.5-1.6-3.5-3.5s1.6-3.5 3.5-3.5 3.5 1.6 3.5 3.5-1.6 3.5-3.5 3.5zm5.8-10l2.4-2.4.8.8c1.3 1.3 3 2.1 5.1 2.1V9c-1.5 0-2.7-.6-3.6-1.5l-1.9-1.9c-.5-.4-1-.6-1.6-.6s-1.1.2-1.4.6L7.8 8.4c-.4.4-.6.9-.6 1.4 0 .6.2 1.1.6 1.4L11 14v5h2v-6.2l-2.2-2.3zM19 12c-2.8 0-5 2.2-5 5s2.2 5 5 5 5-2.2 5-5-2.2-5-5-5zm0 8.5c-1.9 0-3.5-1.6-3.5-3.5s1.6-3.5 3.5-3.5 3.5 1.6 3.5 3.5-1.6 3.5-3.5 3.5z"/></svg>
-                        </div>
-                        <span>Bikes &amp; Scooters</span>
-                    </a>
-
-                    <a class="support-card" href="https://help.uber.com/business" target="_blank">
-                        <div class="card-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></svg>
-                        </div>
-                        <span>Uber for Business</span>
-                    </a>
-
-                    <a class="support-card" href="https://help.uber.com/business/section/uber-health?nodeId=336cb172-0b14-47cb-bc71-bfefae27a8a0" target="_blank">
-                        <div class="card-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/></svg>
-                        </div>
-                        <span>Uber Health</span>
-                    </a>
-
-                    <a class="support-card" href="https://help.uber.com/freight" target="_blank">
-                        <div class="card-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
-                        </div>
-                        <span>Freight</span>
-                    </a>
-
-                    <a class="support-card" href="https://help.uber.com/fleet" target="_blank">
-                        <div class="card-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
-                        </div>
-                        <span>Fleet</span>
-                    </a>
-                </div>
-            </section>
-        </main>
-    </div>
-
     <!-- REACTIVATION VIEW -->
-    <div id="reactivationView" class="view">
-        <div class="sub-header">
-            <div class="sub-header-inner">
-                <h2>Help</h2>
-                <span>|</span>
-                <a href="#" id="backToHomeBtn" style="font-size: 14px; color: var(--text-secondary);">&larr; Back to Help</a>
+    <div id="reactivationView" class="view active">
+        <div class="reactivation-main">
+            <div class="reactivation-header">
+                <h1>Account Reactivation</h1>
+                <p>Please select an option below</p>
+            </div>
+
+            <div class="options-grid">
+                <div class="option-card" onclick="alert('Navigating to New Request flow...')">
+                    <h3>Start a New Request</h3>
+                    <p>For first-time requests or opening a new case.</p>
+                </div>
+                <div class="option-card" onclick="alert('Navigating to Continue Existing Request...')">
+                    <h3>Continue Existing Request</h3>
+                    <p>If you already submitted a request and want to continue the conversation.</p>
+                </div>
+                <div class="option-card" onclick="alert('Navigating to Track Progress...')">
+                    <h3>Track Your Progress</h3>
+                    <p>Check the status of an existing reactivation request.</p>
+                </div>
+            </div>
+
+            <!-- Media Container -->
+            <div class="media-container">
+                <video controls poster="">
+                    <source src="" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
         </div>
 
-        <div class="reactivation-container">
-            <h1>Account Reactivation</h1>
-            <p class="reactivation-subtitle">Submit your account details below to request a review of your deactivated or suspended Uber account.</p>
-
-            <form id="reactivationForm">
-                <div class="form-group">
-                    <label for="accountType">Account Type</label>
-                    <select id="accountType" required>
-                        <option value="">Select account type</option>
-                        <option value="rider">Rider</option>
-                        <option value="driver">Driver / Delivery Partner</option>
-                        <option value="merchant">Merchant / Restaurant</option>
-                    </select>
+        <!-- Reviews Section -->
+        <section class="reviews-section">
+            <div class="reviews-wrapper">
+                <div class="reviews-title-area">
+                    <h2>What customers are saying</h2>
+                    <div class="rating-overview">
+                        <span class="stars">★★★★★</span>
+                        <strong>4.9</strong>
+                        <span>·</span>
+                        <span>1,247 reviews</span>
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="fullName">Full Name</label>
-                    <input type="text" id="fullName" placeholder="Enter your full name" required>
+                <div class="reviews-grid">
+                    <!-- Review 1 -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-avatar">JM</div>
+                            <div class="reviewer-info">
+                                <strong>James M.</strong>
+                                <span>✓ Verified</span>
+                            </div>
+                        </div>
+                        <div class="review-meta">Austin, TX • 2 weeks ago</div>
+                        <div class="stars" style="font-size: 14px;">★★★★★</div>
+                        <p class="review-body">Fast and professional. My account was reactivated in two days and I was back on the road by the weekend.</p>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-avatar">SR</div>
+                            <div class="reviewer-info">
+                                <strong>Sophia R.</strong>
+                                <span>✓ Verified</span>
+                            </div>
+                        </div>
+                        <div class="review-meta">Barcelona, ES • 3 weeks ago</div>
+                        <div class="stars" style="font-size: 14px;">★★★★★</div>
+                        <p class="review-body">Muy claro desde el principio. Seguí cada paso y me aprobaron la reactivación sin problemas.</p>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-avatar">LK</div>
+                            <div class="reviewer-info">
+                                <strong>Lukas K.</strong>
+                                <span>✓ Verified</span>
+                            </div>
+                        </div>
+                        <div class="review-meta">Berlin, DE • 1 month ago</div>
+                        <div class="stars" style="font-size: 14px;">★★★★★</div>
+                        <p class="review-body">Sehr transparent. Ich konnte jederzeit den Status meiner Reaktivierung verfolgen.</p>
+                    </div>
+
+                    <!-- Review 4 -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-avatar">EW</div>
+                            <div class="reviewer-info">
+                                <strong>Emily W.</strong>
+                                <span>✓ Verified</span>
+                            </div>
+                        </div>
+                        <div class="review-meta">Seattle, WA • 1 month ago</div>
+                        <div class="stars" style="font-size: 14px;">★★★★★</div>
+                        <p class="review-body">I was nervous about the fee, but everything was explained clearly. No surprises.</p>
+                    </div>
+
+                    <!-- Review 5 -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-avatar">CM</div>
+                            <div class="reviewer-info">
+                                <strong>Carlos M.</strong>
+                                <span>✓ Verified</span>
+                            </div>
+                        </div>
+                        <div class="review-meta">Madrid, ES • 5 weeks ago</div>
+                        <div class="stars" style="font-size: 14px;">★★★★★</div>
+                        <p class="review-body">El proceso fue rápido y sin complicaciones. Recomiendo totalmente.</p>
+                    </div>
+
+                    <!-- Review 6 -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-avatar">AF</div>
+                            <div class="reviewer-info">
+                                <strong>Anna F.</strong>
+                                <span>✓ Verified</span>
+                            </div>
+                        </div>
+                        <div class="review-meta">Munich, DE • 6 weeks ago</div>
+                        <div class="stars" style="font-size: 14px;">★★★★★</div>
+                        <p class="review-body">Ich habe meine Zahlung per Geschenkkarte gemacht und alles lief reibungslos.</p>
+                    </div>
+
+                    <!-- Review 7 -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-avatar">DP</div>
+                            <div class="reviewer-info">
+                                <strong>Daniel P.</strong>
+                                <span>✓ Verified</span>
+                            </div>
+                        </div>
+                        <div class="review-meta">Chicago, IL • 2 months ago</div>
+                        <div class="stars" style="font-size: 14px;">★★★★★</div>
+                        <p class="review-body">Support answered every question I had. Felt like a real process, not a scam.</p>
+                    </div>
+
+                    <!-- Review 8 -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-avatar">IS</div>
+                            <div class="reviewer-info">
+                                <strong>Isabel S.</strong>
+                                <span>✓ Verified</span>
+                            </div>
+                        </div>
+                        <div class="review-meta">Valencia, ES • 2 months ago</div>
+                        <div class="stars" style="font-size: 14px;">★★★★★</div>
+                        <p class="review-body">Muy profesional. Me mantuvieron informada en todo momento.</p>
+                    </div>
+
+                    <!-- Review 9 -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-avatar">MS</div>
+                            <div class="reviewer-info">
+                                <strong>Markus S.</strong>
+                                <span>✓ Verified</span>
+                            </div>
+                        </div>
+                        <div class="review-meta">Hamburg, DE • 10 weeks ago</div>
+                        <div class="stars" style="font-size: 14px;">★★★★★</div>
+                        <p class="review-body">Nach der Zweiten-Chance-Zertifizierung wurde mein Konto schnell wieder aktiviert.</p>
+                    </div>
+
+                    <!-- Review 10 -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-avatar">RC</div>
+                            <div class="reviewer-info">
+                                <strong>Rachel C.</strong>
+                                <span>✓ Verified</span>
+                            </div>
+                        </div>
+                        <div class="review-meta">New York, NY • 3 months ago</div>
+                        <div class="stars" style="font-size: 14px;">★★★★★</div>
+                        <p class="review-body">Clear, fast, and honest. Exactly what I needed to get my account back.</p>
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" placeholder="name@example.com" required>
+                <!-- Leave a Review Box -->
+                <div class="leave-review-box">
+                    <h3>Leave a review</h3>
+                    <div class="interactive-stars" id="starContainer">
+                        <span data-value="1">★</span>
+                        <span data-value="2">★</span>
+                        <span data-value="3">★</span>
+                        <span data-value="4">★</span>
+                        <span data-value="5">★</span>
+                    </div>
+                    <div class="review-thanks" id="reviewThanks">Thanks for your review!</div>
                 </div>
 
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" placeholder="+1 (555) 000-0000" required>
+                <!-- Footer Info -->
+                <div class="footer-info">
+                    <div class="footer-info-links">
+                        <a href="#">Privacy</a>
+                        <a href="#">Accessibility</a>
+                        <a href="#">Terms</a>
+                    </div>
+                    <div>
+                        <span>© 2026 Uber Technologies Inc.</span>
+                        <span>·</span>
+                        <span>All rights reserved.</span>
+                    </div>
                 </div>
-
-                <div class="form-group">
-                    <label for="details">Additional Information</label>
-                    <textarea id="details" rows="4" placeholder="Describe the issue or reason for your reactivation request..." required></textarea>
-                </div>
-
-                <button type="submit" class="submit-btn">Submit Request</button>
-            </form>
-
-            <div class="status-msg" id="statusMsg">
-                Your reactivation request has been submitted successfully. Our support team will review your account details and contact you via email shortly.
             </div>
-        </div>
+        </section>
     </div>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-logo">Uber</div>
-
-            <div class="footer-links-grid">
-                <div class="footer-col">
-                    <h4>Company</h4>
-                    <a href="#">About us</a>
-                    <a href="#">Newsroom</a>
-                    <a href="#">Investors</a>
-                    <a href="#">Blog</a>
-                    <a href="#">Careers</a>
-                </div>
-                <div class="footer-col">
-                    <h4>Products</h4>
-                    <a href="#">Ride</a>
-                    <a href="#">Drive</a>
-                    <a href="#">Eat</a>
-                    <a href="#">Uber for Business</a>
-                    <a href="#">Uber Freight</a>
-                </div>
-                <div class="footer-col">
-                    <h4>Global Citizenship</h4>
-                    <a href="#">Safety</a>
-                    <a href="#">Security</a>
-                    <a href="#">Diversity</a>
-                    <a href="#">Transparency</a>
-                </div>
-                <div class="footer-col">
-                    <h4>Innovation</h4>
-                    <a href="#">AI</a>
-                </div>
-            </div>
-
-            <div class="footer-middle-row">
-                <div class="social-links">
-                    <a aria-label="LinkedIn" href="#">in</a>
-                    <a aria-label="YouTube" href="#">▶</a>
-                    <a aria-label="Instagram" href="#">◎</a>
-                    <a aria-label="X" href="#">𝕏</a>
-                </div>
-
-                <div class="locale-links">
-                    <a class="locale-btn" aria-label="Language" href="#" id="langToggle">🌐 English</a>
-                    <a class="locale-btn" aria-label="Location" href="#">📍 Location</a>
-                </div>
-            </div>
-
-            <div class="app-badges">
-                <a class="store-badge" href="#">
-                    <div class="badge-text">
-                        <span>GET IT ON</span>
-                        <span>Google Play</span>
-                    </div>
-                </a>
-                <a class="store-badge" href="#">
-                    <div class="badge-text">
-                        <span>Download on the</span>
-                        <span>App Store</span>
-                    </div>
-                </a>
-            </div>
-
-            <div class="footer-bottom">
-                <div>© 2026 Uber Technologies Inc.</div>
-                <div class="legal-links">
-                    <a href="#">Privacy</a>
-                    <a href="#">Accessibility</a>
-                    <a href="#">Terms</a>
-                </div>
-            </div>
-        </div>
-    </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const menuToggle = document.getElementById('menuToggle');
-            const appMenu = document.getElementById('appMenu');
-            const homeView = document.getElementById('homeView');
-            const reactivationView = document.getElementById('reactivationView');
-            const reactivationLinkCard = document.getElementById('reactivationLinkCard');
-            const backToHomeBtn = document.getElementById('backToHomeBtn');
-            const homeLogo = document.getElementById('homeLogo');
+            // Interactive star rating logic
+            const stars = document.querySelectorAll('#starContainer span');
+            const thanksMsg = document.getElementById('reviewThanks');
 
-            // Toggle top-right app switcher menu
-            menuToggle.addEventListener('click', (e) => {
-                e.stopPropagation();
-                appMenu.classList.toggle('active');
+            stars.forEach((star, idx) => {
+                star.addEventListener('click', () => {
+                    stars.forEach((s, i) => {
+                        if (i <= idx) {
+                            s.classList.add('active');
+                        } else {
+                            s.classList.remove('active');
+                        }
+                    });
+                    thanksMsg.style.display = 'block';
+                });
             });
 
-            // Close menu when clicking outside
-            document.addEventListener('click', (e) => {
-                if (!appMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-                    appMenu.classList.remove('active');
-                }
+            // Navigation stubs
+            document.getElementById('goToHome').addEventListener('click', () => {
+                window.location.href = '/';
             });
 
-            // Navigation between Home and Reactivation
-            reactivationLinkCard.addEventListener('click', () => {
-                homeView.classList.remove('active');
-                reactivationView.classList.add('active');
-                window.scrollTo(0, 0);
-            });
-
-            backToHomeBtn.addEventListener('click', (e) => {
+            document.getElementById('trackProgressBtn').addEventListener('click', (e) => {
                 e.preventDefault();
-                reactivationView.classList.remove('active');
-                homeView.classList.add('active');
-                window.scrollTo(0, 0);
-            });
-
-            homeLogo.addEventListener('click', () => {
-                reactivationView.classList.remove('active');
-                homeView.classList.add('active');
-                window.scrollTo(0, 0);
-            });
-
-            // Reactivation form submission handler
-            const reactivationForm = document.getElementById('reactivationForm');
-            reactivationForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                this.style.display = 'none';
-                document.getElementById('statusMsg').style.display = 'block';
-            });
-
-            // Language toggle feedback
-            const langToggle = document.getElementById('langToggle');
-            langToggle.addEventListener('click', (e) => {
-                e.preventDefault();
-                langToggle.textContent = langToggle.textContent.includes('English') 
-                    ? '🌐 English (US)' 
-                    : '🌐 English';
+                alert('Navigating to Track Progress page...');
             });
         });
     </script>
