@@ -4,147 +4,206 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DriverCareHub | Help</title>
+<title>DriverCareHub | Support</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#171717;background:#fff}
-a{color:inherit;text-decoration:none}
-.topbar{height:76px;border-bottom:1px solid #eee;display:flex;align-items:center;justify-content:space-between;padding:0 6%}
-.brand{font-size:25px;font-weight:700;letter-spacing:-1px}
-.topright{display:flex;align-items:center;gap:25px}
-.lang{border:0;background:white;font-size:14px;padding:10px}
-.login{font-size:14px}
-.signup{background:#111;color:white;padding:12px 20px;border-radius:30px;font-size:14px}
-.hero{padding:70px 8% 55px}
-.hero h1{font-size:58px;letter-spacing:-2px;margin:0 0 24px;font-weight:700}
-.hero p{font-size:17px;line-height:1.7;max-width:720px;color:#444;margin:0}
-.independent{font-size:12px;color:#777;margin-top:17px}
-.categories{padding:25px 8% 65px}
-.categories h2{font-size:25px;margin-bottom:25px}
-.category-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.category{border-top:1px solid #ddd;padding:22px 8px 20px 0;min-height:115px;display:flex;flex-direction:column;justify-content:space-between}
-.category h3{font-size:16px;font-weight:600;margin:0}
-.arrow{font-size:21px;text-align:right}
-.help{background:#f7f7f7;padding:55px 8%;display:flex;justify-content:space-between;align-items:center;gap:30px}
-.help h2{font-size:30px;margin:0 0 12px}
-.help p{color:#555;line-height:1.6;max-width:570px}
-.help a{background:#111;color:white;border-radius:30px;padding:14px 23px;white-space:nowrap}
-footer{background:#080808;color:#fff;padding:55px 8% 25px}
-.footer-brand{font-size:27px;font-weight:bold;margin-bottom:45px}
-.footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
-.footer-col h3{font-size:15px;margin-bottom:20px}
-.footer-col a{display:block;color:#ddd;font-size:14px;margin:15px 0}
-.footer-bottom{border-top:1px solid #444;margin-top:45px;padding-top:25px;color:#aaa;font-size:12px;line-height:1.8}
-@media(max-width:700px){
+body{margin:0;background:#fff;color:#000;font-family:Arial,Helvetica,sans-serif}
+a{text-decoration:none;color:inherit}
+.topbar{height:76px;padding:0 6%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ddd}
+.logo{font-size:27px;font-weight:800;letter-spacing:-1.5px}
+.menu{display:flex;align-items:center;gap:25px;font-size:14px}
+.menu a{font-weight:600}
+.menu button{border:1px solid #000;background:#fff;padding:11px 17px;border-radius:25px;font-weight:bold}
+.hero{padding:65px 7% 35px}
+.hero h1{font-size:45px;letter-spacing:-1.8px;margin:0 0 18px}
+.hero p{font-size:17px;line-height:1.7;max-width:800px;margin:0}
+.smallnote{font-size:12px;margin-top:16px}
+.categories{padding:25px 7% 75px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.card{background:#000;color:#fff;min-height:190px;padding:25px;border-radius:8px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .2s}
+.card:hover{transform:translateY(-3px)}
+.card .symbol{width:37px;height:37px}
+.card h2{font-size:20px;margin:20px 0 0;font-weight:600}
+.arrow{font-size:23px;text-align:right}
+.section-title{font-size:25px;margin:0 0 22px}
+.footer{background:#000;color:#fff;padding:65px 7% 30px}
+.footer-logo{font-size:38px;font-weight:800;letter-spacing:-2px;margin-bottom:45px}
+.footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:35px}
+.footer-col h3{font-size:16px;margin:0 0 23px}
+.footer-col a{display:block;font-size:14px;margin:17px 0;color:#fff}
+.footer-col a:hover{text-decoration:underline}
+.social{display:flex;gap:12px;margin:45px 0 25px;flex-wrap:wrap}
+.social a{width:43px;height:43px;border:1px solid #fff;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:17px}
+.local{display:flex;gap:25px;align-items:center;flex-wrap:wrap;font-size:14px;margin-bottom:40px}
+.downloads{display:flex;gap:12px;flex-wrap:wrap;margin:25px 0 35px}
+.store{border:1px solid white;border-radius:6px;padding:10px 16px;min-width:165px;font-size:11px}
+.store strong{display:block;font-size:16px;margin-top:3px}
+.legal{border-top:1px solid #555;padding-top:25px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:12px;color:#ddd}
+.legal-links{display:flex;gap:22px;flex-wrap:wrap}
+.disclaimer{font-size:12px;color:#aaa;line-height:1.7;margin-top:25px;max-width:850px}
+@media(max-width:750px){
 .topbar{padding:0 5%;height:68px}
-.brand{font-size:21px}
-.topright{gap:10px}
-.login{display:none}
-.hero{padding:55px 6% 40px}
-.hero h1{font-size:46px}
-.categories{padding:25px 6% 45px}
-.category-grid{grid-template-columns:repeat(2,1fr);gap:10px}
-.help{padding:40px 6%;display:block}
-.help a{display:inline-block;margin-top:12px}
-footer{padding:40px 6% 22px}
-.footer-grid{grid-template-columns:repeat(2,1fr);gap:25px}
+.logo{font-size:22px}
+.menu{gap:12px}
+.menu .hide{display:none}
+.hero{padding:48px 6% 28px}
+.hero h1{font-size:39px}
+.hero p{font-size:16px}
+.categories{padding:20px 6% 55px}
+.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.card{min-height:155px;padding:17px}
+.card h2{font-size:16px}
+.card .symbol{width:31px;height:31px}
+.footer{padding:45px 6% 25px}
+.footer-grid{grid-template-columns:repeat(2,1fr);gap:30px 20px}
+.footer-logo{font-size:32px}
+}
+@media(max-width:360px){
+.grid{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
 
 <header class="topbar">
-<a class="brand" href="#">DriverCareHub</a>
-<div class="topright">
-<select class="lang" aria-label="Select language">
-<option>English</option>
-<option>Français</option>
-<option>Español</option>
-</select>
-<a class="login" href="#support">Help</a>
-<a class="signup" href="#support">Get Support</a>
-</div>
+<a class="logo" href="#">DriverCareHub</a>
+<nav class="menu">
+<a class="hide" href="#categories">Help</a>
+<a class="hide" href="#footer">About</a>
+<button onclick="location.href='#contact'">Get Support</button>
+</nav>
 </header>
 
 <main>
 <section class="hero">
 <h1>Help</h1>
-<p>Welcome to DriverCareHub. Find information and independent assistance for your driver account enquiries, account reactivation guidance, documents and other support concerns.</p>
-<div class="independent">Independent driver assistance service.</div>
+<p>We're here to help. Looking for driver support and assistance? Explore the support resources below to find guidance for your account, documents, delivery services and other driver-related concerns.</p>
+<p class="smallnote">Independent driver assistance platform.</p>
 </section>
 
-<section class="categories" id="support">
-<h2>Browse help topics</h2>
-<div class="category-grid">
-<a class="category" href="#contact">
-<h3>Account Reactivation</h3><span class="arrow">↗</span>
+<section class="categories" id="categories">
+<div class="grid">
+
+<a class="card" href="#contact">
+<svg class="symbol" viewBox="0 0 40 40" fill="none" stroke="white" stroke-width="2"><path d="M5 25h30l-3-10H9L5 25Z"/><path d="M9 15l3-7h16l3 7M8 25v6m24-6v6M12 31h16M12 20h16"/></svg>
+<h2>Riders</h2><span class="arrow">↗</span>
 </a>
-<a class="category" href="#contact">
-<h3>Account and Profile</h3><span class="arrow">↗</span>
+
+<a class="card" href="#contact">
+<svg class="symbol" viewBox="0 0 40 40" fill="none" stroke="white" stroke-width="2"><circle cx="20" cy="20" r="15"/><circle cx="20" cy="20" r="5"/><path d="M20 5v10m0 10v10M5 20h10m10 0h10"/></svg>
+<h2>Driving &amp; Delivering</h2><span class="arrow">↗</span>
 </a>
-<a class="category" href="#contact">
-<h3>Document Assistance</h3><span class="arrow">↗</span>
+
+<a class="card" href="#contact">
+<svg class="symbol" viewBox="0 0 40 40" fill="none" stroke="white" stroke-width="2"><path d="M8 7v12m5-12v12M5 19h11M10 19v14M26 7v26m0-26c8 0 9 12 0 12"/></svg>
+<h2>Food Delivery</h2><span class="arrow">↗</span>
 </a>
-<a class="category" href="#contact">
-<h3>Account Security</h3><span class="arrow">↗</span>
+
+<a class="card" href="#contact">
+<svg class="symbol" viewBox="0 0 40 40" fill="none" stroke="white" stroke-width="2"><circle cx="20" cy="12" r="7"/><path d="M7 35c0-9 5-14 13-14s13 5 13 14"/></svg>
+<h2>Account Reactivation</h2><span class="arrow">↗</span>
 </a>
-<a class="category" href="#contact">
-<h3>Appeal Guidance</h3><span class="arrow">↗</span>
+
+<a class="card" href="#contact">
+<svg class="symbol" viewBox="0 0 40 40" fill="none" stroke="white" stroke-width="2"><path d="M5 16h30v19H5zM3 16l5-9h24l5 9M14 35V22h12v13"/></svg>
+<h2>Merchants &amp; Restaurants</h2><span class="arrow">↗</span>
 </a>
-<a class="category" href="#contact">
-<h3>Payment Enquiries</h3><span class="arrow">↗</span>
+
+<a class="card" href="#contact">
+<svg class="symbol" viewBox="0 0 40 40" fill="none" stroke="white" stroke-width="2"><circle cx="9" cy="29" r="5"/><circle cx="31" cy="29" r="5"/><path d="M9 29l8-17h8l6 17M17 12h-5m5 0 8 17H9"/></svg>
+<h2>Bikes &amp; Scooters</h2><span class="arrow">↗</span>
 </a>
-<a class="category" href="#contact">
-<h3>General Support</h3><span class="arrow">↗</span>
+
+<a class="card" href="#contact">
+<svg class="symbol" viewBox="0 0 40 40" fill="none" stroke="white" stroke-width="2"><rect x="5" y="12" width="30" height="21" rx="2"/><path d="M14 12V7h12v5M5 20h30M16 20v4h8v-4"/></svg>
+<h2>Business Support</h2><span class="arrow">↗</span>
 </a>
-<a class="category" href="#contact">
-<h3>Other Questions</h3><span class="arrow">↗</span>
+
+<a class="card" href="#contact">
+<svg class="symbol" viewBox="0 0 40 40" fill="none" stroke="white" stroke-width="2"><path d="M20 5v30M5 20h30"/><circle cx="20" cy="20" r="15"/></svg>
+<h2>Health Services</h2><span class="arrow">↗</span>
 </a>
+
+<a class="card" href="#contact">
+<svg class="symbol" viewBox="0 0 40 40" fill="none" stroke="white" stroke-width="2"><path d="M3 15h23v17H3zM26 21h7l5 7v4H26z"/><circle cx="11" cy="33" r="3"/><circle cx="31" cy="33" r="3"/></svg>
+<h2>Freight Assistance</h2><span class="arrow">↗</span>
+</a>
+
+<a class="card" href="#contact">
+<svg class="symbol" viewBox="0 0 40 40" fill="none" stroke="white" stroke-width="2"><rect x="4" y="13" width="13" height="14" rx="2"/><rect x="23" y="13" width="13" height="14" rx="2"/><path d="M17 20h6M8 31h24"/></svg>
+<h2>Fleet Support</h2><span class="arrow">↗</span>
+</a>
+
 </div>
 </section>
 
-<section class="help" id="contact">
-<div>
-<h2>Need more help?</h2>
-<p>Our independent assistance team can help you understand your support options and organise your enquiry.</p>
-</div>
-<a href="mailto:support@drivercarehub.example">Contact Support ↗</a>
+<section class="hero" id="contact">
+<h1>Need more help?</h1>
+<p>Our independent assistance service can help you organise your enquiry and understand available support options.</p>
+<p><a href="mailto:support@drivercarehub.example" style="display:inline-block;background:#000;color:#fff;padding:15px 24px;border-radius:30px;margin-top:20px">Contact Support ↗</a></p>
 </section>
 </main>
 
-<footer>
-<div class="footer-brand">DriverCareHub</div>
+<footer class="footer" id="footer">
+<div class="footer-logo">DriverCareHub</div>
+
 <div class="footer-grid">
 <div class="footer-col">
 <h3>Company</h3>
 <a href="#">About us</a>
+<a href="#">Newsroom</a>
 <a href="#">Our services</a>
-<a href="#">Contact</a>
+<a href="#">Careers</a>
 </div>
 <div class="footer-col">
-<h3>Driver Support</h3>
-<a href="#support">Account assistance</a>
-<a href="#support">Reactivation guidance</a>
-<a href="#support">Document guidance</a>
+<h3>Products</h3>
+<a href="#categories">Driver assistance</a>
+<a href="#categories">Account guidance</a>
+<a href="#categories">Delivery support</a>
+<a href="#categories">Business support</a>
+<a href="#categories">Fleet assistance</a>
 </div>
 <div class="footer-col">
-<h3>Resources</h3>
-<a href="#support">Help topics</a>
-<a href="#support">Frequently asked questions</a>
-<a href="#support">Support enquiries</a>
+<h3>Global Citizenship</h3>
+<a href="#">Safety</a>
+<a href="#">Security</a>
+<a href="#">Diversity</a>
+<a href="#">Transparency</a>
 </div>
 <div class="footer-col">
-<h3>Legal</h3>
-<a href="#">Privacy policy</a>
-<a href="#">Terms of service</a>
-<a href="#">Disclaimer</a>
+<h3>Innovation</h3>
+<a href="#">Technology</a>
+<a href="#">Digital support</a>
 </div>
 </div>
-<div class="footer-bottom">
-<p>DriverCareHub is an independent driver assistance service. It is not affiliated with, endorsed by, or operated by Uber or any other rideshare platform.</p>
-<p>Never share your password, OTP or verification codes.</p>
-<p>© 2026 DriverCareHub. All rights reserved.</p>
+
+<div class="social">
+<a href="#" aria-label="LinkedIn">in</a>
+<a href="#" aria-label="YouTube">▶</a>
+<a href="#" aria-label="Instagram">◎</a>
+<a href="#" aria-label="X">X</a>
 </div>
+
+<div class="local">
+<span>◎ English</span>
+<span>⌖ Global</span>
+</div>
+
+<div class="downloads">
+<div class="store">GET IT ON<strong>Google Play</strong></div>
+<div class="store">Download on the<strong>App Store</strong></div>
+</div>
+
+<div class="legal">
+<span>© 2026 DriverCareHub</span>
+<div class="legal-links">
+<a href="#">Privacy</a>
+<a href="#">Accessibility</a>
+<a href="#">Terms</a>
+</div>
+</div>
+
+<p class="disclaimer">DriverCareHub is an independent assistance service. It is not affiliated with, endorsed by, or operated by Uber or any other rideshare company. Never share your password or verification codes.</p>
 </footer>
 </body>
 </html>
