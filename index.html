@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uber Help & Account Reactivation</title>
+    <title>Uber Help | Support & Account Reactivation</title>
     <style>
         :root {
             --bg-primary: #ffffff;
@@ -403,6 +403,16 @@
             border-left: 4px solid var(--bg-dark);
             border-radius: 4px;
             font-size: 14px;
+        }
+
+        .case-details-box {
+            margin-top: 12px;
+            padding: 12px;
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-light);
+            border-radius: 6px;
+            font-size: 13px;
+            line-height: 1.6;
         }
 
         .media-container {
@@ -1173,9 +1183,9 @@
                         <label for="newAccountType">Account Type *</label>
                         <select id="newAccountType" required>
                             <option value="">Select account type</option>
-                            <option value="driver">Driver / Delivery Partner</option>
-                            <option value="rider">Rider</option>
-                            <option value="fleet">Fleet Partner</option>
+                            <option value="Driver / Delivery Partner">Driver / Delivery Partner</option>
+                            <option value="Rider">Rider</option>
+                            <option value="Fleet Partner">Fleet Partner</option>
                         </select>
                     </div>
 
@@ -1227,7 +1237,7 @@
                 </form>
 
                 <div class="feedback-banner" id="newRequestFeedback">
-                    Your reactivation case has been created. Use your registered email address in <strong>Track Your Progress</strong> or <strong>Continue Existing Request</strong> to follow updates.
+                    Your reactivation request has been <strong>automatically saved</strong>! Use your registered email address in <strong>Track Your Progress</strong> or <strong>Continue Existing Request</strong> to follow or resume your case anytime.
                 </div>
             </div>
 
@@ -1255,7 +1265,7 @@
                 <form id="continueRequestForm">
                     <div class="form-group">
                         <label for="continueEmail">Email Address *</label>
-                        <input type="email" id="continueEmail" placeholder="Enter your email address" required>
+                        <input type="email" id="continueEmail" placeholder="Enter your registered email address" required>
                     </div>
 
                     <button type="submit" class="submit-btn">Continue Request</button>
@@ -1281,7 +1291,7 @@
                 <form id="trackProgressForm">
                     <div class="form-group">
                         <label for="trackEmail">Email Address *</label>
-                        <input type="email" id="trackEmail" placeholder="Enter your email address" required>
+                        <input type="email" id="trackEmail" placeholder="Enter your registered email address" required>
                     </div>
 
                     <button type="submit" class="submit-btn">Track Progress</button>
@@ -1297,7 +1307,7 @@
     </div>
 
 
-    <!-- JavaScript Router & Interactions -->
+    <!-- JavaScript Router & Data Persistence Logic -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const views = {
@@ -1417,35 +1427,80 @@
                 hasSigned = false;
             });
 
-            // New Request Form Submission
+            // 1. AUTOMATIC SAVE ON NEW REQUEST FORM SUBMISSION
             document.getElementById('newRequestForm').addEventListener('submit', function(e) {
                 e.preventDefault();
                 if (!hasSigned) {
                     alert('Please sign the agreement before submitting.');
                     return;
                 }
-                const submittedEmail = document.getElementById('newEmail').value;
-                localStorage.setItem('uber_reactivation_email', submittedEmail);
+
+                const emailInput = document.getElementById('newEmail').value.trim().toLowerCase();
+                const formData = {
+                    caseId: 'UB-' + Math.floor(100000 + Math.random() * 900000),
+                    accountType: document.getElementById('newAccountType').value,
+                    fullName: document.getElementById('newFullName').value,
+                    email: emailInput,
+                    phone: document.getElementById('newPhone').value,
+                    city: document.getElementById('newCity').value,
+                    reason: document.getElementById('newReason').value,
+                    status: 'In Review',
+                    dateSubmitted: new Date().toLocaleDateString()
+                };
+
+                localStorage.setItem('uber_case_' + emailInput, JSON.stringify(formData));
+
                 this.style.display = 'none';
                 document.getElementById('newRequestFeedback').style.display = 'block';
             });
 
-            // Continue Existing Request Form Submission
+            // 2. CONTINUE EXISTING REQUEST (EMAIL LOOKUP)
             document.getElementById('continueRequestForm').addEventListener('submit', function(e) {
                 e.preventDefault();
-                const email = document.getElementById('continueEmail').value.trim();
+                const emailInput = document.getElementById('continueEmail').value.trim().toLowerCase();
                 const banner = document.getElementById('continueFeedback');
-                banner.innerHTML = `Verification code sent to <strong>${email}</strong>. Please check your inbox to continue your active reactivation case.`;
-                banner.style.display = 'block';
+                const savedData = localStorage.getItem('uber_case_' + emailInput);
+
+                if (savedData) {
+                    const parsed = JSON.parse(savedData);
+                    banner.innerHTML = `
+                        <div>Active case <strong>#${parsed.caseId}</strong> located for <strong>${parsed.email}</strong>.</div>
+                        <div class="case-details-box">
+                            <strong>Applicant:</strong> ${parsed.fullName}<br>
+                            <strong>Account Type:</strong> ${parsed.accountType}<br>
+                            <strong>City:</strong> ${parsed.city}<br>
+                            <strong>Status:</strong> ${parsed.status}
+                        </div>
+                    `;
+                    banner.style.display = 'block';
+                } else {
+                    banner.innerHTML = `No existing reactivation case found for <strong>${emailInput}</strong>. Please start a new request first.`;
+                    banner.style.display = 'block';
+                }
             });
 
-            // Track Progress Form Submission
+            // 3. TRACK PROGRESS (EMAIL LOOKUP)
             document.getElementById('trackProgressForm').addEventListener('submit', function(e) {
                 e.preventDefault();
-                const email = document.getElementById('trackEmail').value.trim();
+                const emailInput = document.getElementById('trackEmail').value.trim().toLowerCase();
                 const banner = document.getElementById('trackFeedback');
-                banner.innerHTML = `Status lookup initiated for <strong>${email}</strong>: Your reactivation request is currently <strong>In Review</strong> by our specialist team.`;
-                banner.style.display = 'block';
+                const savedData = localStorage.getItem('uber_case_' + emailInput);
+
+                if (savedData) {
+                    const parsed = JSON.parse(savedData);
+                    banner.innerHTML = `
+                        <div>Case <strong>#${parsed.caseId}</strong> for <strong>${parsed.email}</strong></div>
+                        <div class="case-details-box">
+                            <strong>Current Status:</strong> ${parsed.status}<br>
+                            <strong>Applicant:</strong> ${parsed.fullName} (${parsed.accountType})<br>
+                            <strong>Submitted On:</strong> ${parsed.dateSubmitted}
+                        </div>
+                    `;
+                    banner.style.display = 'block';
+                } else {
+                    banner.innerHTML = `No active case record found for <strong>${emailInput}</strong>. Please verify your email or submit a new request.`;
+                    banner.style.display = 'block';
+                }
             });
 
             // Interactive star rating logic
