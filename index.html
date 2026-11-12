@@ -4,83 +4,128 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DriverCareHub | Driver Support</title>
+<title>DriverCareHub | Help Centre</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#080d0b;color:#fff;line-height:1.6}
-header{padding:20px 7%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #26352e}
-.logo{font-size:23px;font-weight:bold;color:#35d47b}
-nav a{color:#ddd;text-decoration:none;margin-left:18px}
-.hero{padding:85px 7%;text-align:center;background:linear-gradient(140deg,#10291d,#080d0b)}
-.hero h1{font-size:clamp(32px,6vw,52px);line-height:1.15;margin:0 0 18px}
-.hero h1 span{color:#35d47b}
-.hero p{color:#c0cbc4;max-width:620px;margin:0 auto 28px}
-.btn{display:inline-block;background:#28c76f;color:#06140c;padding:13px 25px;border-radius:7px;text-decoration:none;font-weight:bold}
-section{padding:55px 7%}
-h2{text-align:center;font-size:30px}
-.intro{text-align:center;color:#aebbb2;max-width:650px;margin:auto}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:30px}
-.card{background:#111b15;border:1px solid #263b2e;padding:24px;border-radius:12px}
-.card h3{color:#42d984}
-.card p{color:#bdc9c0}
-.contact{max-width:650px;margin:25px auto;background:#111b15;padding:25px;border-radius:12px}
-input,select,textarea{width:100%;padding:13px;margin:8px 0 15px;background:#080d0b;color:white;border:1px solid #35463b;border-radius:6px}
-button{width:100%;padding:14px;background:#28c76f;color:#06140c;border:0;border-radius:7px;font-weight:bold;font-size:16px}
-.notice{font-size:13px;color:#aebbb2}
-footer{text-align:center;padding:25px;color:#9eaaa2;border-top:1px solid #26352e}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#202923;background:#fff}
+.top{background:#092b1b;color:#fff;padding:15px 7%;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:23px;font-weight:700;color:#5ce09a}
+.language{background:transparent;color:#fff;border:1px solid #668b75;padding:9px;border-radius:5px}
+.hero{background:#f1f7f3;text-align:center;padding:65px 18px 55px}
+.hero h1{font-size:45px;margin:0 0 15px;color:#123c27}
+.hero p{color:#59665e;font-size:16px}
+.search{max-width:590px;margin:28px auto 0;display:flex;background:#fff;border:1px solid #cbd8ce;border-radius:7px;padding:5px}
+.search input{flex:1;border:0;outline:0;padding:13px;font-size:15px;min-width:0}
+.search button{background:#087c43;color:#fff;border:0;border-radius:5px;padding:12px 20px}
+.content{max-width:1050px;margin:auto;padding:50px 22px}
+.content h2{text-align:center;font-size:29px;color:#183d29}
+.sub{text-align:center;color:#68736b;margin-bottom:35px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:19px}
+.card{border:1px solid #e0e8e2;border-radius:9px;padding:25px;background:white;transition:.2s}
+.card:hover{border-color:#32a76b;box-shadow:0 5px 18px #0000000b}
+.symbol{font-size:27px}
+.card h3{color:#17452d;margin:12px 0 8px}
+.card p{color:#68736b;font-size:14px;line-height:1.7}
+.card a{color:#087c43;text-decoration:none;font-weight:bold;font-size:14px}
+.notice{background:#eff7f1;border-radius:9px;padding:25px;margin-top:38px;text-align:center}
+.notice h3{color:#17452d}
+.notice p{color:#59665e}
+.notice a{display:inline-block;background:#087c43;color:white;text-decoration:none;padding:12px 22px;border-radius:5px;margin-top:8px}
+footer{background:#092b1b;color:#d2e2d7;padding:35px 7%;text-align:center;font-size:13px;line-height:1.8}
+footer strong{color:#5ce09a}
+@media(max-width:500px){.hero h1{font-size:35px}.top{padding:14px 5%}.logo{font-size:20px}}
 </style>
 </head>
 <body>
-<header>
+<header class="top">
 <div class="logo">DriverCareHub</div>
-<nav><a href="#services">Services</a><a href="#contact">Contact</a></nav>
+<select class="language" aria-label="Language">
+<option>English</option>
+<option>French</option>
+<option>Spanish</option>
+</select>
 </header>
 
-<div class="hero">
-<h1>Driver Support.<br><span>Guidance You Can Trust.</span></h1>
-<p>Independent assistance for drivers with account enquiries, support requests, document guidance and case follow-up.</p>
-<a class="btn" href="#contact">Request Assistance</a>
-</div>
-
-<section id="services">
-<h2>How We Can Help</h2>
-<p class="intro">Clear guidance to help drivers understand their account concerns and prepare support requests.</p>
-<div class="cards">
-<div class="card"><h3>Account Guidance</h3><p>Get guidance on account access concerns and common account issues.</p></div>
-<div class="card"><h3>Appeal Assistance</h3><p>Get help organising information and preparing an account appeal.</p></div>
-<div class="card"><h3>Document Guidance</h3><p>Understand common document requirements and submission steps.</p></div>
-<div class="card"><h3>Case Follow-up</h3><p>Get help organising your support enquiry and tracking your next steps.</p></div>
+<section class="hero">
+<h1>Help Centre</h1>
+<p>Welcome to DriverCareHub. How can we help you today?</p>
+<div class="search">
+<input id="searchInput" type="search" placeholder="Search for help and support...">
+<button onclick="searchHelp()">Search</button>
 </div>
 </section>
 
-<section id="contact">
-<h2>Request Assistance</h2>
-<p class="intro">Tell us briefly what you need help with. Do not include passwords or verification codes.</p>
-<div class="contact">
-<form onsubmit="event.preventDefault();alert('Please contact us using the support email provided by DriverCareHub. The online request form is not connected yet.');">
-<label>Full name</label>
-<input type="text" placeholder="Your name" required>
-<label>Email address</label>
-<input type="email" placeholder="Your email" required>
-<label>What do you need help with?</label>
-<select required>
-<option value="">Choose a topic</option>
-<option>Account access</option>
-<option>Appeal guidance</option>
-<option>Document guidance</option>
-<option>Other enquiry</option>
-</select>
-<label>Brief description</label>
-<textarea rows="5" placeholder="Describe your concern..." required></textarea>
-<p class="notice">Never submit your account password, OTP, verification code or payment card details.</p>
-<button type="submit">Submit Request</button>
-</form>
+<main class="content">
+<h2>How can we assist you?</h2>
+<p class="sub">Explore our support topics and find guidance for your concerns.</p>
+
+<div class="grid" id="supportGrid">
+<div class="card">
+<div class="symbol">👤</div>
+<h3>Account Assistance</h3>
+<p>Guidance for account access difficulties, account updates and common account enquiries.</p>
+<a href="#contact">Get assistance →</a>
 </div>
-</section>
+
+<div class="card">
+<div class="symbol">🔄</div>
+<h3>Reactivation Guidance</h3>
+<p>Understand possible next steps when your driver account has been deactivated or restricted.</p>
+<a href="#contact">Get assistance →</a>
+</div>
+
+<div class="card">
+<div class="symbol">📄</div>
+<h3>Document Support</h3>
+<p>Guidance on document requirements, reviews, updates and submission questions.</p>
+<a href="#contact">Get assistance →</a>
+</div>
+
+<div class="card">
+<div class="symbol">🛡️</div>
+<h3>Account Security</h3>
+<p>Learn how to protect your account and respond to suspicious account activity.</p>
+<a href="#contact">Get assistance →</a>
+</div>
+
+<div class="card">
+<div class="symbol">📨</div>
+<h3>Appeal Guidance</h3>
+<p>Organise your information and understand how to prepare a clear support appeal.</p>
+<a href="#contact">Get assistance →</a>
+</div>
+
+<div class="card">
+<div class="symbol">💬</div>
+<h3>General Enquiries</h3>
+<p>Find guidance for other driver-related questions and support concerns.</p>
+<a href="#contact">Get assistance →</a>
+</div>
+</div>
+
+<div class="notice" id="contact">
+<h3>Still need assistance?</h3>
+<p>Contact our independent assistance team for guidance with your enquiry.</p>
+<a href="mailto:support@drivercarehub.example">Contact Support</a>
+</div>
+</main>
 
 <footer>
+<strong>DriverCareHub</strong>
+<p>Independent driver assistance and guidance.</p>
+<p>We are not affiliated with, endorsed by, or operated by Uber or any other rideshare platform.</p>
+<p>Never share your password, OTP or verification codes with anyone.</p>
 <p>© 2026 DriverCareHub. All rights reserved.</p>
-<p>DriverCareHub is an Uber assistance service and is affiliated with, endorsed by and operated by Uber.</p>
 </footer>
+
+<script>
+function searchHelp(){
+const q=document.getElementById('searchInput').value.toLowerCase().trim();
+const cards=document.querySelectorAll('.card');
+cards.forEach(card=>{
+card.style.display=card.innerText.toLowerCase().includes(q)?'block':'none';
+});
+}
+</script>
 </body>
 </html>
