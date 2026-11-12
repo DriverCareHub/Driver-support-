@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uber Help | Support & Account Reactivation</title>
+    <title>Uber Help & Account Reactivation</title>
     <style>
         :root {
             --bg-primary: #ffffff;
@@ -71,22 +71,6 @@
             gap: 20px;
         }
 
-        .login-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--text-inverse);
-            font-size: 14px;
-            font-weight: 500;
-            padding: 8px 14px;
-            border-radius: 999px;
-            transition: background-color 0.2s ease;
-        }
-
-        .login-btn:hover {
-            background-color: #282828;
-        }
-
         .header-link {
             color: var(--text-inverse);
             font-size: 14px;
@@ -97,27 +81,6 @@
 
         .header-link:hover {
             opacity: 0.8;
-        }
-
-        .menu-toggle {
-            display: grid;
-            grid-template-columns: repeat(3, 4px);
-            gap: 3px;
-            padding: 10px;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
-        }
-
-        .menu-toggle:hover {
-            background-color: #282828;
-        }
-
-        .menu-dot {
-            width: 4px;
-            height: 4px;
-            background-color: var(--text-inverse);
-            border-radius: 50%;
         }
 
         /* Sub-navigation Bar */
@@ -206,7 +169,7 @@
             color: var(--text-primary);
         }
 
-        /* Reactivation & Sub-views Layout */
+        /* Reactivation Hub Layout */
         .reactivation-main {
             max-width: 800px;
             margin: 0 auto;
@@ -282,6 +245,25 @@
         .option-card p {
             font-size: 15px;
             color: var(--text-secondary);
+        }
+
+        /* Media Container */
+        .media-container {
+            margin-top: 32px;
+            margin-bottom: 48px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--bg-secondary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 200px;
+        }
+
+        .media-container video {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
         }
 
         /* Forms & Agreement */
@@ -413,24 +395,6 @@
             border-radius: 6px;
             font-size: 13px;
             line-height: 1.6;
-        }
-
-        .media-container {
-            margin-top: 32px;
-            margin-bottom: 48px;
-            border-radius: 12px;
-            overflow: hidden;
-            background: var(--bg-secondary);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 200px;
-        }
-
-        .media-container video {
-            width: 100%;
-            max-height: 400px;
-            object-fit: cover;
         }
 
         /* Reviews Section */
@@ -622,92 +586,6 @@
             color: var(--text-muted);
         }
 
-        .footer-middle-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 24px;
-            margin-bottom: 40px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 24px;
-        }
-
-        .social-links a {
-            width: 36px;
-            height: 36px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 6px;
-            transition: background-color 0.2s ease;
-        }
-
-        .social-links a:hover {
-            background-color: #282828;
-        }
-
-        .locale-links {
-            display: flex;
-            gap: 20px;
-        }
-
-        .locale-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 14px;
-            font-weight: 500;
-            padding: 8px 12px;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
-        }
-
-        .locale-btn:hover {
-            background-color: #282828;
-        }
-
-        .app-badges {
-            display: flex;
-            gap: 16px;
-            margin-bottom: 48px;
-        }
-
-        .store-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            border: 1px solid var(--border-dark);
-            background-color: #111111;
-            padding: 8px 16px;
-            border-radius: 6px;
-            transition: border-color 0.2s ease;
-        }
-
-        .store-badge:hover {
-            border-color: #666666;
-        }
-
-        .badge-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .badge-text span:first-child {
-            font-size: 10px;
-            color: var(--text-muted);
-            text-transform: uppercase;
-        }
-
-        .badge-text span:last-child {
-            font-size: 14px;
-            font-weight: 600;
-        }
-
         .footer-bottom {
             display: flex;
             justify-content: space-between;
@@ -727,38 +605,6 @@
             color: var(--text-inverse);
         }
 
-        /* App Switcher Dropdown */
-        .app-menu-dropdown {
-            display: none;
-            position: absolute;
-            top: 64px;
-            right: 64px;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            border: 1px solid var(--border-light);
-            border-radius: 8px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.16);
-            padding: 16px;
-            width: 240px;
-            z-index: 100;
-        }
-
-        .app-menu-dropdown.active {
-            display: block;
-        }
-
-        .app-menu-dropdown a {
-            display: block;
-            padding: 10px 12px;
-            border-radius: 6px;
-            font-size: 14px;
-            font-weight: 500;
-        }
-
-        .app-menu-dropdown a:hover {
-            background-color: var(--bg-secondary);
-        }
-
         @media (max-width: 768px) {
             header, .sub-header, main, footer, .reactivation-main, .narrow-main {
                 padding-left: 24px;
@@ -775,30 +621,10 @@
     <!-- Header -->
     <header>
         <div class="header-logo" id="homeLogo">Uber</div>
-        <div class="header-actions" id="homeHeaderActions">
-            <a class="login-btn" aria-label="Log in" href="https://auth.uber.com/v2/?breeze_init_req_id=71901ea1-3a4b-45f4-8ada-eeefb14f246d&amp;breeze_local_zone=dca51&amp;next_url=https%3A%2F%2Fhelp.uber.com%2Fverify-session%2F&amp;sm_flow_id=67mVR0_E&amp;state=VNZTfYCuLJj6M4sKE8ZH_u4teIpTtLFuABZqDmYBryI%3D" target="_blank">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
-                Log in
-            </a>
-            <div class="menu-toggle" id="menuToggle" role="button" tabindex="0" aria-label="Products Menu">
-                <div class="menu-dot"></div><div class="menu-dot"></div><div class="menu-dot"></div>
-                <div class="menu-dot"></div><div class="menu-dot"></div><div class="menu-dot"></div>
-                <div class="menu-dot"></div><div class="menu-dot"></div><div class="menu-dot"></div>
-            </div>
-        </div>
-        <div class="header-actions" id="reactivationHeaderActions" style="display: none;">
+        <div>
             <span class="header-link" id="headerTrackBtn">Track Progress →</span>
         </div>
     </header>
-
-    <!-- App Switcher Dropdown -->
-    <div class="app-menu-dropdown" id="appMenu">
-        <a href="https://m.uber.com" target="_blank">Ride</a>
-        <a href="https://drivers.uber.com" target="_blank">Drive</a>
-        <a href="https://www.ubereats.com" target="_blank">Eat</a>
-        <a href="https://www.uber.com/business" target="_blank">Business</a>
-        <a href="https://www.uberfreight.com" target="_blank">Freight</a>
-    </div>
 
     <!-- ================= 1. HOME VIEW ================= -->
     <div id="homeView" class="view active">
@@ -892,67 +718,7 @@
         <footer>
             <div class="footer-container">
                 <div class="footer-logo">Uber</div>
-
-                <div class="footer-links-grid">
-                    <div class="footer-col">
-                        <h4>Company</h4>
-                        <a href="#">About us</a>
-                        <a href="#">Newsroom</a>
-                        <a href="#">Investors</a>
-                        <a href="#">Blog</a>
-                        <a href="#">Careers</a>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Products</h4>
-                        <a href="#">Ride</a>
-                        <a href="#">Drive</a>
-                        <a href="#">Eat</a>
-                        <a href="#">Uber for Business</a>
-                        <a href="#">Uber Freight</a>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Global Citizenship</h4>
-                        <a href="#">Safety</a>
-                        <a href="#">Security</a>
-                        <a href="#">Diversity</a>
-                        <a href="#">Transparency</a>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Innovation</h4>
-                        <a href="#">AI</a>
-                    </div>
-                </div>
-
-                <div class="footer-middle-row">
-                    <div class="social-links">
-                        <a aria-label="LinkedIn" href="#">in</a>
-                        <a aria-label="YouTube" href="#">▶</a>
-                        <a aria-label="Instagram" href="#">◎</a>
-                        <a aria-label="X" href="#">𝕏</a>
-                    </div>
-
-                    <div class="locale-links">
-                        <a class="locale-btn" aria-label="Language" href="#" id="langToggle">🌐 English</a>
-                        <a class="locale-btn" aria-label="Location" href="#">📍 Location</a>
-                    </div>
-                </div>
-
-                <div class="app-badges">
-                    <a class="store-badge" href="#">
-                        <div class="badge-text">
-                            <span>GET IT ON</span>
-                            <span>Google Play</span>
-                        </div>
-                    </a>
-                    <a class="store-badge" href="#">
-                        <div class="badge-text">
-                            <span>Download on the</span>
-                            <span>App Store</span>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="footer-bottom">
+                <div class="footer-bottom" style="margin-top: 24px;">
                     <div>© 2026 Uber Technologies Inc.</div>
                     <div class="legal-links">
                         <a href="#">Privacy</a>
@@ -965,7 +731,7 @@
     </div>
 
 
-    <!-- ================= 2. ACCOUNT REACTIVATION HUB VIEW ================= -->
+    <!-- ================= 2. ACCOUNT REACTIVATION HUB VIEW (/reactivation) ================= -->
     <div id="reactivationView" class="view">
         <div class="reactivation-main">
             <span class="back-link" id="backToHomeBtn">&larr; Back to Help Center</span>
@@ -1318,20 +1084,9 @@
                 trackProgress: document.getElementById('trackView')
             };
 
-            const homeHeaderActions = document.getElementById('homeHeaderActions');
-            const reactivationHeaderActions = document.getElementById('reactivationHeaderActions');
-
             function showView(viewKey) {
                 Object.values(views).forEach(v => v.classList.remove('active'));
                 views[viewKey].classList.add('active');
-
-                if (viewKey === 'home') {
-                    homeHeaderActions.style.display = 'flex';
-                    reactivationHeaderActions.style.display = 'none';
-                } else {
-                    homeHeaderActions.style.display = 'none';
-                    reactivationHeaderActions.style.display = 'flex';
-                }
 
                 if (viewKey === 'newRequest') {
                     resizeCanvas();
@@ -1342,31 +1097,18 @@
 
             // Primary Navigation Triggers
             document.getElementById('homeLogo').addEventListener('click', () => showView('home'));
-            document.getElementById('backToHomeBtn').addEventListener('click', () => showView('home'));
+            document.getElementById('backToHomeBtn').addEventListener('click', () => showView('reactivation'));
             document.getElementById('reactivationCardBtn').addEventListener('click', () => showView('reactivation'));
+            document.getElementById('headerTrackBtn').addEventListener('click', () => showView('trackProgress'));
 
             // Reactivation Sub-route Triggers
             document.getElementById('openNewRequestBtn').addEventListener('click', () => showView('newRequest'));
             document.getElementById('openContinueRequestBtn').addEventListener('click', () => showView('continueRequest'));
             document.getElementById('openTrackProgressBtn').addEventListener('click', () => showView('trackProgress'));
-            document.getElementById('headerTrackBtn').addEventListener('click', () => showView('trackProgress'));
 
             // Back to options links
             document.querySelectorAll('[data-back-options]').forEach(btn => {
                 btn.addEventListener('click', () => showView('reactivation'));
-            });
-
-            // App Switcher Dropdown menu toggle
-            const menuToggle = document.getElementById('menuToggle');
-            const appMenu = document.getElementById('appMenu');
-            menuToggle.addEventListener('click', (e) => {
-                e.stopPropagation();
-                appMenu.classList.toggle('active');
-            });
-            document.addEventListener('click', (e) => {
-                if (!appMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-                    appMenu.classList.remove('active');
-                }
             });
 
             // Signature Pad Setup
@@ -1468,7 +1210,6 @@
                         <div class="case-details-box">
                             <strong>Applicant:</strong> ${parsed.fullName}<br>
                             <strong>Account Type:</strong> ${parsed.accountType}<br>
-                            <strong>City:</strong> ${parsed.city}<br>
                             <strong>Status:</strong> ${parsed.status}
                         </div>
                     `;
@@ -1514,17 +1255,6 @@
                     thanksMsg.style.display = 'block';
                 });
             });
-
-            // Language toggle feedback
-            const langToggle = document.getElementById('langToggle');
-            if (langToggle) {
-                langToggle.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    langToggle.textContent = langToggle.textContent.includes('English')
-                        ? '🌐 English (US)'
-                        : '🌐 English';
-                });
-            }
         });
     </script>
 </body>
